@@ -11,12 +11,11 @@
 .sub_title_box {
     display: flex; 
     padding: 5px;
-    height: 60px;
+    height: 80px;
     width: 100%;
     line-height: 25px;
     color: #ffffff;
     background-color: #000000;
-    border: solid 2px #000000;
 }
 
 .headbox {
@@ -26,7 +25,6 @@
     font-weight: bold; 
     color: #ffffff;
     background-color: #000000;
-    border: solid 2px #000000;
 }
 
 .footerbox { 
@@ -90,7 +88,7 @@
     padding: 10px;
     height: 650px;
     width: 100%;
-    background-color: #999999;
+    background-color: #000000;
     justify-content: center;
 }
 
@@ -99,7 +97,7 @@
     padding: 10px;
     height: 650px;
     width: 100%;
-    background-color: #999999;
+    background-color: #000000;
     justify-content: center;
 }
 
@@ -108,7 +106,7 @@
     padding: 10px;
     height: 650px;
     width: 100%;
-    background-color: #999999;
+    background-color: #000000;
     justify-content: center;
 }
 
@@ -117,8 +115,7 @@
     padding: 10px;
     height: 650px;
     width: 100%;
-    background-color: #999999;
-    border: solid 2px #000000;
+    background-color: #000000;
     justify-content: center;
 }
 
@@ -146,9 +143,7 @@
     height: 15%;
     font-weight: bold; 
     font-size: 12px;
-    color: #ffffff;
-    background-color: #ffffff;
-    border: solid 1px #000000;
+    border: solid 1px #ffffff;
 }
 
 .profile_sub_title {
@@ -159,9 +154,7 @@
     height: 25%;
     font-weight: bold; 
     font-size: 12px;
-    color: #ffffff;
-    background-color: #ffffff;
-    border: solid 1px #000000;
+    border: solid 1px #ffffff;
 }
 
 .profile_paragraph {
@@ -172,9 +165,7 @@
     height: 60%;
     font-weight: bold; 
     font-size: 12px;
-    color: #ffffff;
-    background-color: #ffffff;
-    border: solid 1px #000000;
+    border: solid 1px #ffffff;
 }
 
 .profile_career {
@@ -186,9 +177,7 @@
     height: 98%;
     font-weight: bold; 
     font-size: 12px;
-    color: #ffffff;
-    background-color: #999999;
-    border: solid 1px #000000;
+    border: solid 1px #ffffff;
 }
 
 .profile_img {
@@ -200,9 +189,7 @@
     height: 98%;
     font-weight: bold; 
     font-size: 12px;
-    color: #ffffff;
-    background-color: #999999;
-    border: solid 1px #000000;
+    border: solid 1px #ffffff;
 }
 
 .portfolio_img {
@@ -211,9 +198,8 @@
     padding: 5px;
     height: 98%;
     width: 49%;
-    color: #000000;
-    background-color: #ffffff;
-    border: solid 1px #000000;
+    color: #ffffff;
+    border: solid 1px #ffffff;
 }
 
 .portfolio_paragraph {
@@ -222,9 +208,8 @@
     padding: 5px;
     height: 98%;
     width: 49%;
-    color: #000000;
-    background-color: #ffffff;
-    border: solid 1px #000000;
+    color: #ffffff;
+    border: solid 1px #ffffff;
 }
 
 .center {
@@ -241,9 +226,8 @@
     height: 100%;
     font-weight: bold; 
     font-size: 12px;
-    color: #000000;
-    background-color: #ffffff;
-    border: solid 1px #000000;
+    color: #ffffff;
+    border: solid 1px #ffffff;
 } .box2 p {
     padding: auto;
     margin: auto;

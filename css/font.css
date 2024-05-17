@@ -12,22 +12,32 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'MaruBuri-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .title {
     height: 80px;
-    font-family: 'SUITE-Regular';
-    font-size: 14px;
+    font-family: 'MaruBuri-Regular';
+    font-size: 21px;
     transform: rotate(0.04deg);
+    text-decoration: double;
+    text-decoration-line: underline;
+    text-decoration-color: #ffffff;
 }
 
 .Menu {
-    font-family: 'SUITE-Regular';
+    font-family: 'MaruBuri-Regular';
     font-size: 14px;
     transform: rotate(0.04deg);
 }
 
 .subtitle {
-    font-family: 'SUITE-Regular';
-    font-size: 16px;
+    font-family: 'MaruBuri-Regular';
+    font-size: 18px;
     font-weight: bolder;
     transform: rotate(0.04deg);
 }
@@ -42,7 +52,7 @@
     font-family: 'Pretendard-Regular';
     font-size: 16px;
     transform: rotate(0.04deg);
-    color: #000000;
+    color: #ffffff;
     line-height: 2;
 }
 
