@@ -1,65 +1,65 @@
 @font-face {
-    font-family: 'SUITE-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
+  font-family: "SUITE-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'MaruBuri-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "MaruBuri-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 .title {
-    height: 80px;
-    font-family: 'MaruBuri-Regular';
-    font-size: 21px;
-    transform: rotate(0.04deg);
-    text-decoration: double;
-    text-decoration-line: underline;
-    text-decoration-color: #ffffff;
+  height: 80px;
+  font-family: "MaruBuri-Regular";
+  font-size: 21px;
+  transform: rotate(0.04deg);
 }
 
 .Menu {
-    font-family: 'MaruBuri-Regular';
-    font-size: 14px;
-    transform: rotate(0.04deg);
+  font-family: "MaruBuri-Regular";
+  font-size: 14px;
+  transform: rotate(0.04deg);
 }
 
 .subtitle {
-    font-family: 'MaruBuri-Regular';
-    font-size: 18px;
-    font-weight: bolder;
-    transform: rotate(0.04deg);
+  font-family: "MaruBuri-Regular";
+  font-size: 18px;
+  font-weight: bolder;
+  transform: rotate(0.04deg);
 }
 
 .footer {
-    font-family: 'SUITE-Regular';
-    font-size: 14px;
-    transform: rotate(0.04deg);
+  font-family: "SUITE-Regular";
+  font-size: 14px;
+  transform: rotate(0.04deg);
 }
 
 .main_latter {
-    font-family: 'Pretendard-Regular';
-    font-size: 16px;
-    transform: rotate(0.04deg);
-    color: #ffffff;
-    line-height: 2;
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  transform: rotate(0.04deg);
+  color: #ffffff;
+  line-height: 2;
 }
 
 .align_cen {
-    align-items: center;
+  align-items: center;
 }
 
 .justify_cen {
-    justify-content: center;
+  justify-content: center;
 }
