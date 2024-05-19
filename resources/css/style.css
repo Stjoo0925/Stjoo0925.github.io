@@ -214,6 +214,8 @@
 }
 .basic-N32 .contents-inner {
   padding: 8rem 1.6rem;
+  background-color: #111111;
+  border-radius: 10px;
 }
 .basic-N32 .contents-container {
   display: flex;
@@ -258,11 +260,12 @@
 
 /* basic-N14 [AtlWD9AJUr] */
 .basic-N14 {
-  background-color: var(--highlight-bg);
   overflow: hidden;
 }
 .basic-N14 .contents-inner {
   padding: 8rem 1.6rem;
+  background-color: #111111;
+  border-radius: 10px;
 }
 .basic-N14 .textset {
   margin-bottom: 5rem;
@@ -297,19 +300,23 @@
     padding: 8rem 1.6rem;
   }
   .basic-N14 .textset {
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
   }
+
   .basic-N14 .contents-group {
-    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
     margin-left: 0;
   }
   .basic-N14 .cardset {
-    width: 100%;
     padding: 0;
+    width: calc(33% / 1);
+    margin-bottom: 5px;
   }
+
   .basic-N14 .cardset + .cardset {
-    margin-top: 8rem;
+    margin-top: 0;
   }
 }
 
@@ -474,6 +481,8 @@
 }
 .basic-N46 .contents-inner {
   padding: 8rem 1.6rem;
+  background-color: #111111;
+  border-radius: 10px;
 }
 .basic-N46 .textset {
   text-align: center;
@@ -506,19 +515,17 @@
     padding: 8rem 1.6rem;
   }
   .basic-N46 .contents-group {
-    flex-direction: column;
-    width: 100%;
-    margin-left: 0;
-    padding: 0 6.4rem;
+    display: flex;
+    flex-wrap: wrap;
   }
   .basic-N46 .cardset {
-    width: 100%;
+    width: calc(50% - 12.8px);
     padding: 4rem 0;
+    box-sizing: border-box;
   }
   .basic-N46 .cardset + .cardset {
     margin-top: 0;
     border-left: 0;
-    border-top: 1px solid var(--border-color);
   }
 }
 
@@ -534,6 +541,7 @@
   height: 100%;
   object-fit: cover;
   vertical-align: top;
+  filter: invert(100%);
 }
 
 /* basic-N4 [pLLWd94qY2] */
@@ -641,9 +649,11 @@
     padding: 4rem 1.6rem;
   }
   .basic-N4 .footer-top {
-    margin-bottom: 0;
-    flex-direction: column;
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: row;
     align-items: flex-start;
+    align-items: center;
   }
   .basic-N4 .footer-logo a {
     width: 8.4rem;
@@ -664,11 +674,10 @@
   .basic-N4 .footer-snslist {
     margin: 2.4rem 0 1.6rem 0;
     justify-content: center;
-  }
-  .basic-N4 .footer-bottom {
-    text-align: left;
+    align-items: center;
   }
   .basic-N4 .footer-txt {
+    margin-left: 30px;
     flex-direction: column;
   }
   .basic-N4 .footer-txt p + p {

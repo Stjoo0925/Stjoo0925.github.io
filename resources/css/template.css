@@ -32,7 +32,7 @@
   --link-color: var(--text-color1);
   --link-hover-color: var(--text-color1);
   --code-color: #d63384;
-  --highlight-bg: #f7f7fb;
+  --highlight-bg: #fff;
   --letter-spacing: -0.025rem;
   --text-color1: #111111;
   --text-color2: #333333;
@@ -128,10 +128,10 @@ body {
   font-size: var(--fs-p3);
   line-height: var(--lh-p3);
   letter-spacing: var(--letter-spacing);
-  color: var(--body-color);
-  background-color: var(--body-bg);
+  color: #fff;
+  background-color: #000;
   -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: #fff;
 }
 hr {
   margin: 1rem 0;
