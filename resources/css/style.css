@@ -312,8 +312,9 @@
   }
   .basic-N14 .cardset {
     padding: 10px;
-    width: calc(50% / 1);
+    width: calc(33% / 1);
     margin-bottom: 5px;
+
   }
 
   .basic-N14 .cardset + .cardset {
@@ -519,7 +520,7 @@
     justify-content: space-around;
   }
   .basic-N46 .cardset {
-    width: calc(20% - 12.8px);
+    width: calc(36% - 12.8px);
     padding: 2rem 0;
     box-sizing: border-box;
   }
