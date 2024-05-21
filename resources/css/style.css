@@ -396,7 +396,7 @@
   content: "";
   width: 2rem;
   height: 2rem;
-  background-image: url("../../resources/icons/ico_btnset_arrow_white_sm.svg");
+  background-image: url("/resources/icons/ico_btnset_arrow_white_sm.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -410,7 +410,7 @@
   content: "";
   width: 2rem;
   height: 2rem;
-  background-image: url("../../resources/icons/ico_btnset_arrow_white_sm.svg");
+  background-image: url("/resources/icons/ico_btnset_arrow_white_sm.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -499,7 +499,7 @@
 }
 .basic-N46 .cardset-figure {
   width: 8rem;
-  height: 8rem;
+  height: 4rem;
   margin: 0 auto;
   border-radius: 1rem;
 }
@@ -516,13 +516,14 @@
   }
   .basic-N46 .contents-group {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-around;
   }
   .basic-N46 .cardset {
-    width: calc(36% - 12.8px);
-    padding: 2rem 0;
+    width: calc(20% - 12.8px);
+    padding: 0.5rem 0;
     box-sizing: border-box;
+    overflow: hidden;
   }
   .basic-N46 .cardset + .cardset {
     margin-top: 0;
