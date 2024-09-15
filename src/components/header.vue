@@ -1,37 +1,3 @@
-<script setup>
-import { ref, onMounted, onUnmounted } from "vue";
-import { useRouter } from "vue-router";
-
-const isMenuOpen = ref(false);
-const router = useRouter();
-
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-};
-
-const handleClickOutside = (event) => {
-  const menu = document.querySelector(".nav-menu");
-  const hamburgerButton = document.querySelector(".hamburger-btn");
-
-  if (!menu.contains(event.target) && !hamburgerButton.contains(event.target)) {
-    isMenuOpen.value = false;
-  }
-};
-
-router.beforeEach(() => {
-  isMenuOpen.value = false;
-  return true;
-});
-
-onMounted(() => {
-  document.addEventListener("click", handleClickOutside);
-});
-
-onUnmounted(() => {
-  document.removeEventListener("click", handleClickOutside);
-});
-</script>
-
 <template>
   <header class="header-container">
     <RouterLink to="/">
@@ -136,12 +102,14 @@ a {
   transition: color 0.3s ease;
 }
 
-.router-link-active {
-  color: var(--secondary-highlight-color);
-}
-
 .nav-menu li a:hover {
   color: var(--primary-highlight-color);
+}
+
+/* 활성화된 링크에 적용될 스타일 */
+.nav-menu li a.router-link-active {
+  color: var(--primary-highlight-color);
+  border-bottom: 2px solid var(--primary-highlight-color);
 }
 
 /* 모바일 화면일 때 햄버거 메뉴 적용 */

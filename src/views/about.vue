@@ -14,10 +14,16 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
+  <div class="about-container">
     <Loading />
     <div v-if="!loadingStore.isLoading">자기소개 페이지 입니다.</div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.about-container {
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg-color);
+}
+</style>
