@@ -10,6 +10,6 @@
 .about-container {
   width: 100%;
   height: 100%;
-  background-color: var(--main-bg-color);
+  background-color: var(--secondary-bg-color);
 }
 </style>

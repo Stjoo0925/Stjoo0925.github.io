@@ -1,11 +1,14 @@
 <script setup>
+import { ref, watch } from "vue";
+import { useRoute, useRouter } from "vue-router";
 import Header from "./components/header.vue";
 import Section from "./components/section.vue";
 import Footer from "./components/footer.vue";
-import { useRouter, useRoute } from "vue-router";
-import { ref } from "vue";
+import { useTransitionStore } from "@/stores/transitionStore";
 
-// 현재 라우트 정보 및 라우터 가져오기
+// Pinia 스토어 사용
+const transitionStore = useTransitionStore();
+
 const router = useRouter();
 const route = useRoute();
 
@@ -31,6 +34,15 @@ const goNext = () => {
     router.push(pages[currentPageIndex.value + 1]);
   }
 };
+
+// 경로 변화 감지 후 슬라이드 방향 설정
+watch(route, (to, from) => {
+  const fromIndex = pages.indexOf(from.path);
+  const toIndex = pages.indexOf(to.path);
+  transitionStore.setDirection(
+    toIndex > fromIndex ? "slide-left" : "slide-right"
+  );
+});
 </script>
 
 <template>
@@ -49,6 +61,7 @@ const goNext = () => {
         <i class="bi bi-caret-left"></i>
       </button>
 
+      <!-- Section 컴포넌트는 스토어를 통해 direction을 참조 -->
       <Section />
 
       <!-- 우측 화살표 (다음 페이지) -->
@@ -113,11 +126,5 @@ const goNext = () => {
 .app-footer {
   flex: 0 0 5vh;
   width: 100%;
-}
-
-@media (max-width: 768px) {
-  .nav-arrow {
-    display: none;
-  }
 }
 </style>
