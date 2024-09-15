@@ -16,7 +16,7 @@ onMounted(() => {
 <template>
   <div>
     <Loading />
-    <div v-if="!loadingStore.isLoading">테크스킬 페이지 입니다.</div>
+    <div v-if="!loadingStore.isLoading">포트폴리오 페이지 입니다.</div>
   </div>
 </template>
 

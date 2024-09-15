@@ -1,0 +1,10 @@
+:root {
+  --main-bg-color: #d2eefa; /* 메인 배경 색상 */
+  --secondary-bg-color: #fce0d4; /* 세컨더리 배경 색상 */
+  --primary-highlight-color: #54a6e1; /* 주요 강조 색상 */
+  --secondary-highlight-color: #a3d8f1; /* 보조 강조 색상 */
+  --alert-color: #de525e; /* 강조 색상 */
+  --header-footer-color: #255daa; /* 헤더와 푸터 색상 */
+  --font-color: #ffffff;
+  --font-color2: #000000;
+}

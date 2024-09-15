@@ -1,5 +1,6 @@
-import reset from "@/assets/css/reset.css";
-import font from "@/assets/css/font.css";
+import "@/assets/css/reset.css";
+import "@/assets/css/font.css";
+import "@/assets/css/theme.css";
 
 import Swal from "sweetalert2";
 import { createApp } from "vue";
