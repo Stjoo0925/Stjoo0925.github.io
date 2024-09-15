@@ -1,3 +1,37 @@
+<script setup>
+import { ref, onMounted, onUnmounted } from "vue";
+import { useRouter } from "vue-router";
+
+const isMenuOpen = ref(false);
+const router = useRouter();
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
+const handleClickOutside = (event) => {
+  const menu = document.querySelector(".nav-menu");
+  const hamburgerButton = document.querySelector(".hamburger-btn");
+
+  if (!menu.contains(event.target) && !hamburgerButton.contains(event.target)) {
+    isMenuOpen.value = false;
+  }
+};
+
+router.beforeEach(() => {
+  isMenuOpen.value = false;
+  return true;
+});
+
+onMounted(() => {
+  document.addEventListener("click", handleClickOutside);
+});
+
+onUnmounted(() => {
+  document.removeEventListener("click", handleClickOutside);
+});
+</script>
+
 <template>
   <header class="header-container">
     <RouterLink to="/">
