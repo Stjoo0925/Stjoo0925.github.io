@@ -109,7 +109,7 @@ a {
 }
 
 .header-title {
-  font-family: "goorm-sans-bold";
+  font-family: "goorm-sans-bold", sans-serif;
   font-size: 24px;
   margin: 0;
   color: var(--font-color);

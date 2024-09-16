@@ -97,7 +97,7 @@ onMounted(() => {
       depth: 0.8, // 3D 깊이
       maxSpeed: 0.02, // 최대 속도
       textHeight: 18, // 텍스트 크기 설정
-      textFont: "goorm-sans-bold, sans-serif", // 글꼴 설정
+      textFont: "goorm-sans-bold", // 글꼴 설정
       wheelZoom: false, // 마우스 휠로 줌 비활성화
       initial: [0.1, -0.1], // 단어들이 자동으로 움직이도록 설정 (x, y 회전 속도)
     });
