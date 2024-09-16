@@ -1,6 +1,7 @@
 import "@/assets/css/reset.css";
 import "@/assets/css/font.css";
 import "@/assets/css/theme.css";
+import "animate.css";
 
 import { createApp } from "vue";
 import App from "./App.vue";

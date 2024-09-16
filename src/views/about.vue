@@ -4,7 +4,7 @@ const githubId = "Stjoo0925"; // 여기에 깃허브 아이디를 입력합니�
 
 <template>
   <div class="about-container about-container-scrollable">
-    <div class="about-img">
+    <div class="about-img animate__animated animate__fadeInLeft">
       <img
         src="https://data1.pokemonkorea.co.kr/newdata/pokedex/full/000701.png"
         alt="Profile Image"
@@ -18,7 +18,7 @@ const githubId = "Stjoo0925"; // 여기에 깃허브 아이디를 입력합니�
     <div class="about-content">
       <div class="about-profile">
         <div class="profile-section">
-          <div class="personal-info">
+          <div class="personal-info animate__animated animate__fadeInUp">
             <div class="about-title">주순태</div>
             <br />
             <ul class="about-list">
@@ -31,7 +31,7 @@ const githubId = "Stjoo0925"; // 여기에 깃허브 아이디를 입력합니�
               </li>
             </ul>
           </div>
-          <div class="education-info">
+          <div class="education-info animate__animated animate__fadeInUp">
             <div class="about-title">Education</div>
             <br />
             <ul class="about-list">
@@ -43,14 +43,14 @@ const githubId = "Stjoo0925"; // 여기에 깃허브 아이디를 입력합니�
           </div>
         </div>
 
-        <div class="profile-section">
+        <div class="profile-section animate__animated animate__fadeInUp">
           <div class="characters">
             <div class="about-title">Characters</div>
             <br />
             <div class="about-contents">#논리적인 #문제해결능력 #팀워크</div>
             <div class="about-contents">#분석적인 #효율적인 #책임감</div>
           </div>
-          <div class="contributions">
+          <div class="contributions animate__animated animate__fadeInUp">
             <div class="about-title">Contributions</div>
             <br />
             <!-- GitHub ReadMe Stats -->
@@ -63,7 +63,7 @@ const githubId = "Stjoo0925"; // 여기에 깃허브 아이디를 입력합니�
         </div>
       </div>
       <!-- GitHub 잔디 그래프 추가 -->
-      <div class="github-contributions">
+      <div class="github-contributions animate__animated animate__fadeInUp">
         <img
           :src="`https://ghchart.rshah.org/0d0d0d/${githubId}`"
           alt="GitHub Contributions Graph"
@@ -164,7 +164,7 @@ a {
 .github-contributions {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 98%;
   height: auto;
   background-color: var(--secondary-bg-color);
   border-radius: 8px;
