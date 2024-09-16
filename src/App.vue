@@ -16,33 +16,47 @@ const route = useRoute();
 const pages = ["/", "/tech-skills", "/portfolio", "/contact"];
 const currentPageIndex = ref(pages.indexOf(route.path));
 
-// 라우트 변경 시 현재 페이지 인덱스 업데이트
-router.afterEach((to) => {
-  currentPageIndex.value = pages.indexOf(to.path);
-});
+// 초기 경로가 pages 배열에 없을 경우 기본 경로로 이동
+if (currentPageIndex.value === -1) {
+  router.push(pages[0]); // 기본 경로로 이동
+}
+
+// 라우트 경로 변화 감지 후 인덱스 업데이트
+watch(
+  () => route.path,
+  (newPath) => {
+    const newIndex = pages.indexOf(newPath);
+    if (newIndex !== -1) {
+      currentPageIndex.value = newIndex;
+    } else {
+      router.push(pages[0]); // 잘못된 경로일 경우 기본 경로로 이동
+    }
+  }
+);
 
 // 이전 페이지로 이동
 const goPrevious = () => {
   if (currentPageIndex.value > 0) {
-    router.push(pages[currentPageIndex.value - 1]);
+    const prevPageIndex = currentPageIndex.value - 1;
+    // 슬라이드 방향을 'slide-right'로 설정 (이전 페이지로 이동하므로)
+    transitionStore.setDirection("slide-right");
+    router.push(pages[prevPageIndex]).catch((err) => {
+      console.error("Navigation error:", err);
+    });
   }
 };
 
 // 다음 페이지로 이동
 const goNext = () => {
   if (currentPageIndex.value < pages.length - 1) {
-    router.push(pages[currentPageIndex.value + 1]);
+    const nextPageIndex = currentPageIndex.value + 1;
+    // 슬라이드 방향을 'slide-left'로 설정 (다음 페이지로 이동하므로)
+    transitionStore.setDirection("slide-left");
+    router.push(pages[nextPageIndex]).catch((err) => {
+      console.error("Navigation error:", err);
+    });
   }
 };
-
-// 경로 변화 감지 후 슬라이드 방향 설정
-watch(route, (to, from) => {
-  const fromIndex = pages.indexOf(from.path);
-  const toIndex = pages.indexOf(to.path);
-  transitionStore.setDirection(
-    toIndex > fromIndex ? "slide-left" : "slide-right"
-  );
-});
 </script>
 
 <template>

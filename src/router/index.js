@@ -1,12 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import About from "@/views/about.vue";
 import TechSkills from "@/views/techSkills.vue";
-import Portfolio from "@/views/Portfolio.vue";
+import Portfolio from "@/views/portfolio.vue";
 import Contact from "@/views/contact.vue";
-import { ref } from "vue";
-
-// 트랜지션 방향을 저장하는 변수 (전역)
-export const direction = ref("slide-left");
+import { useTransitionStore } from "@/stores/transitionStore"; // Pinia 스토어 가져오기
 
 const routes = [
   { path: "/", component: About },
@@ -20,20 +17,15 @@ const router = createRouter({
   routes,
 });
 
-// 라우터 가드를 사용해 트랜지션 방향 결정
-router.beforeEach((to, from, next) => {
-  const routesOrder = ["/", "/tech-skills", "/portfolio", "/contact"];
-  const fromIndex = routesOrder.indexOf(from.path);
-  const toIndex = routesOrder.indexOf(to.path);
+// 라우트 변화 시 Pinia 스토어에서 방향 설정
+router.afterEach((to, from) => {
+  const toDepth = to.path.split("/").length;
+  const fromDepth = from.path.split("/").length;
 
-  // 이동 경로에 따라 트랜지션 방향 설정
-  if (toIndex > fromIndex) {
-    direction.value = "slide-left";
-  } else {
-    direction.value = "slide-right";
-  }
-
-  next();
+  const transitionStore = useTransitionStore(); // Pinia 스토어 사용
+  transitionStore.setDirection(
+    toDepth < fromDepth ? "slide-right" : "slide-left"
+  );
 });
 
 export default router;
