@@ -150,14 +150,13 @@ a {
 .characters,
 .contributions {
   flex: 1;
-  width: 45%;
+  width: 100%;
   padding: 20px;
+  margin: 10px;
   box-sizing: border-box;
   background-color: var(--secondary-bg-color);
   border-radius: 8px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  max-width: 550px;
-  min-height: 150px;
   margin-bottom: 30px;
 }
 
@@ -235,7 +234,7 @@ h3 {
   .characters,
   .contributions {
     width: 100%; /* 각각 100% 폭을 가짐 */
-    margin-bottom: 20px;
+    margin: 0 0 30px 0;
     padding: 15px; /* 내부 패딩 축소 */
   }
 
