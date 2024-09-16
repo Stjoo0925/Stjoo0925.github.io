@@ -121,6 +121,7 @@ a {
   text-align: center;
   font-family: "goorm-sans-bold";
   color: var(--font-color2);
+  margin-bottom: 15px;
 }
 
 .about-content {
@@ -239,7 +240,7 @@ h3 {
   }
 
   .intro-text {
-    font-size: 14px; /* 글자 크기 축소 */
+    font-size: 12px; /* 글자 크기 축소 */
     margin-top: 5px;
   }
 
@@ -252,11 +253,11 @@ h3 {
 /* 더 작은 화면 처리 (모바일) */
 @media (max-width: 480px) {
   .about-title {
-    font-size: 18px; /* 제목 크기 축소 */
+    font-size: 16px; /* 제목 크기 축소 */
   }
 
   .about-contents {
-    font-size: 14px; /* 내용 글자 크기 축소 */
+    font-size: 12px; /* 내용 글자 크기 축소 */
   }
 }
 </style>
