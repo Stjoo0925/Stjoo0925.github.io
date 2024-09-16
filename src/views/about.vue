@@ -218,7 +218,6 @@ h3 {
   .about-profile {
     flex: none; /* 플렉스 비율 해제 */
     width: 100%; /* 가로 폭을 100%로 설정 */
-    padding: 10px; /* 패딩 축소 */
   }
 
   .about-img img {
