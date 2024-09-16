@@ -15,48 +15,59 @@ const githubId = "Stjoo0925"; // 여기에 깃허브 아이디를 입력합니�
         찾는 개발자가 되겠습니다.
       </p>
     </div>
-    <div class="about-profile">
-      <div class="profile-section">
-        <div class="personal-info">
-          <div class="about-title">주순태</div>
-          <br />
-          <ul class="about-list">
-            <li class="about-contents">생일: 1992.09.25</li>
-            <li class="about-contents">전화번호: +82 010-3494-3809</li>
-            <li class="about-contents">메일: stjoo0925@gmail.com</li>
-            <li class="about-contents">
-              Github: <a href="https://github.com/Stjoo0925">깃허브링크</a>
-            </li>
-          </ul>
+    <div class="about-content">
+      <div class="about-profile">
+        <div class="profile-section">
+          <div class="personal-info">
+            <div class="about-title">주순태</div>
+            <br />
+            <ul class="about-list">
+              <li class="about-contents">생일: 1992.09.25</li>
+              <li class="about-contents">전화번호: +82 010-3494-3809</li>
+              <li class="about-contents">메일: stjoo0925@gmail.com</li>
+              <li class="about-contents">
+                Github:
+                <a :href="`https://github.com/${githubId}`">깃허브링크</a>
+              </li>
+            </ul>
+          </div>
+          <div class="education-info">
+            <div class="about-title">Education</div>
+            <br />
+            <ul class="about-list">
+              <li class="about-contents">
+                2024.02 숭실사이버대학교 건설시스템공학과 졸업
+              </li>
+              <li class="about-contents">2011.02 서울 대원고등학교 졸업</li>
+            </ul>
+          </div>
         </div>
-        <div class="education-info">
-          <div class="about-title">Education</div>
-          <br />
-          <ul class="about-list">
-            <li class="about-contents">
-              2024.02 숭실사이버대학교 건설시스템공학과 졸업
-            </li>
-            <li class="about-contents">2011.02 서울 대원고등학교 졸업</li>
-          </ul>
+
+        <div class="profile-section">
+          <div class="characters">
+            <div class="about-title">Characters</div>
+            <br />
+            <div class="about-contents">#논리적인 #문제해결능력 #팀워크</div>
+            <div class="about-contents">#분석적인 #효율적인 #책임감</div>
+          </div>
+          <div class="contributions">
+            <div class="about-title">Contributions</div>
+            <br />
+            <!-- GitHub ReadMe Stats -->
+            <img
+              class="github-stats"
+              :src="`https://github-readme-stats.vercel.app/api?username=${githubId}&theme=dark&show_icons=true`"
+              alt="GitHub Stats"
+            />
+          </div>
         </div>
       </div>
-
-      <div class="profile-section">
-        <div class="characters">
-          <div class="about-title">Characters</div>
-          <br />
-          <div class="about-contents">#논리적인 #문제해결능력 #팀워크</div>
-          <div class="about-contents">#분석적인 #효율적인 #책임감</div>
-        </div>
-        <div class="contributions">
-          <div class="about-title">Contributions</div>
-          <br />
-          <img
-            class="github-stats"
-            :src="`https://github-readme-stats.vercel.app/api?username=${githubId}`"
-            alt="GitHub Stats"
-          />
-        </div>
+      <!-- GitHub 잔디 그래프 추가 -->
+      <div class="github-contributions">
+        <img
+          :src="`https://ghchart.rshah.org/0d0d0d/${githubId}`"
+          alt="GitHub Contributions Graph"
+        />
       </div>
     </div>
   </div>
@@ -67,6 +78,7 @@ a {
   text-decoration: none;
   color: var(--alert-color);
 }
+
 .about-container {
   width: 100%;
   height: 100%;
@@ -111,10 +123,18 @@ a {
   color: var(--font-color2);
 }
 
-.about-profile {
+.about-content {
   flex: 6;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-profile {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -122,7 +142,7 @@ a {
 
 .profile-section {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .personal-info,
@@ -136,9 +156,26 @@ a {
   background-color: var(--secondary-bg-color);
   border-radius: 8px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-  min-height: 200px;
+  max-width: 550px;
+  min-height: 150px;
   margin-bottom: 30px;
+}
+
+.github-contributions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  background-color: var(--secondary-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.github-contributions img {
+  max-width: 80%; /* 부모 요소의 크기에 맞춰 조정 */
+  height: auto; /* 비율을 유지하면서 높이를 자동 조정 */
 }
 
 h3 {
@@ -163,7 +200,8 @@ h3 {
   margin-bottom: 5px;
 }
 
-.github-stats {
+.github-stats,
+.github-contributions img {
   width: 100%; /* 원하는 크기로 설정 */
   height: auto; /* 비율을 유지하면서 높이를 자동 조정 */
 }
@@ -205,6 +243,11 @@ h3 {
   .intro-text {
     font-size: 14px; /* 글자 크기 축소 */
     margin-top: 5px;
+  }
+
+  .github-stats,
+  .github-contributions img {
+    width: 100%; /* 모바일에서 100%로 맞춤 */
   }
 }
 
