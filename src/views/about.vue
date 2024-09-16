@@ -64,10 +64,12 @@ const githubId = "Stjoo0925"; // 여기에 깃허브 아이디를 입력합니�
       </div>
       <!-- GitHub 잔디 그래프 추가 -->
       <div class="github-contributions animate__animated animate__fadeInUp">
-        <img
-          :src="`https://ghchart.rshah.org/0d0d0d/${githubId}`"
-          alt="GitHub Contributions Graph"
-        />
+        <div class="contributions-container">
+          <img
+            :src="`https://ghchart.rshah.org/0d0d0d/${githubId}`"
+            alt="GitHub Contributions Graph"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -158,18 +160,25 @@ a {
   background-color: var(--secondary-bg-color);
   border-radius: 8px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .github-contributions {
   display: flex;
   justify-content: center;
-  width: 98%;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.contributions-container {
+  width: 100%;
   height: auto;
   background-color: var(--secondary-bg-color);
   border-radius: 8px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  padding: 20px;
+  padding: 10px;
+  margin: 10px;
   box-sizing: border-box;
 }
 
