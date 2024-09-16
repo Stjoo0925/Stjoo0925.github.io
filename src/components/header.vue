@@ -3,6 +3,7 @@ import { ref, onMounted, onUnmounted } from "vue";
 import { useRouter } from "vue-router";
 
 const isMenuOpen = ref(false);
+const isHovered = ref(false); // 로고 hover 상태 저장
 const router = useRouter();
 
 const toggleMenu = () => {
@@ -35,7 +36,12 @@ onUnmounted(() => {
 <template>
   <header class="header-container">
     <RouterLink to="/">
-      <div class="logo">
+      <div
+        class="logo"
+        @mouseenter="isHovered = true"
+        @mouseleave="isHovered = false"
+        :class="isHovered ? 'animate__animated animate__jello' : ''"
+      >
         <i class="bi bi-lightning-charge-fill header-img"></i>
         <div class="header-title">JooSoonTae-Portfolio</div>
       </div>
@@ -92,11 +98,6 @@ a {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
-
-.logo:hover .header-img,
-.logo:hover .header-title {
-  color: var(--primary-highlight-color);
 }
 
 .header-img {
