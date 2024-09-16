@@ -218,6 +218,9 @@ a {
   padding: 10px;
   margin: 10px;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .github-contributions img {
