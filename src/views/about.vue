@@ -1,7 +1,3 @@
-<script setup>
-const githubId = "Stjoo0925"; // 여기에 깃허브 아이디를 입력합니다.
-</script>
-
 <template>
   <div class="about-container about-container-scrollable">
     <div class="about-img animate__animated animate__fadeInLeft">
@@ -47,8 +43,20 @@ const githubId = "Stjoo0925"; // 여기에 깃허브 아이디를 입력합니�
           <div class="characters">
             <div class="about-title">Characters</div>
             <br />
-            <div class="about-contents">#논리적인 #문제해결능력 #팀워크</div>
-            <div class="about-contents">#분석적인 #효율적인 #책임감</div>
+            <!-- TagCanvas 적용할 위치 -->
+            <div class="canvas-container">
+              <canvas id="myCanvas" width="500" height="200"></canvas>
+              <div id="tags">
+                <ul>
+                  <li><a href="#">논리적인</a></li>
+                  <li><a href="#">문제해결능력</a></li>
+                  <li><a href="#">팀워크</a></li>
+                  <li><a href="#">분석적인</a></li>
+                  <li><a href="#">효율적인</a></li>
+                  <li><a href="#">책임감</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div class="contributions animate__animated animate__fadeInUp">
             <div class="about-title">Contributions</div>
@@ -74,6 +82,30 @@ const githubId = "Stjoo0925"; // 여기에 깃허브 아이디를 입력합니�
     </div>
   </div>
 </template>
+
+<script setup>
+import { onMounted } from "vue";
+const githubId = "Stjoo0925"; // 여기에 깃허브 아이디를 입력합니다.
+
+onMounted(() => {
+  // TagCanvas 초기화
+  try {
+    TagCanvas.Start("myCanvas", "tags", {
+      textColour: "#000000", // 텍스트 색상
+      outlineColour: null,
+      reverse: true, // 텍스트 회전 방향
+      depth: 0.8, // 3D 깊이
+      maxSpeed: 0.02, // 최대 속도
+      textHeight: 18, // 텍스트 크기 설정
+      textFont: "goorm-sans-bold, sans-serif", // 글꼴 설정
+      wheelZoom: false, // 마우스 휠로 줌 비활성화
+      initial: [0.1, -0.1], // 단어들이 자동으로 움직이도록 설정 (x, y 회전 속도)
+    });
+  } catch (e) {
+    console.log("TagCanvas error: ", e);
+  }
+});
+</script>
 
 <style scoped>
 a {
@@ -161,6 +193,12 @@ a {
   border-radius: 8px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
+}
+
+.canvas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .github-contributions {
