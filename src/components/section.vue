@@ -15,14 +15,13 @@ import { RouterView } from "vue-router";
 <style scoped>
 .section-container {
   height: 100%;
-  width: 100%;
-  padding: 20px;
   background-color: var(--main-bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
+  padding: 35px;
+  box-sizing: border-box;
 }
 
 /* 페이드인/페이드아웃 CSS 애니메이션 정의 */

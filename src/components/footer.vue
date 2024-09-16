@@ -9,11 +9,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  height: 100%;
   background-color: var(--header-footer-color);
   color: var(--font-color);
   font-family: "goorm-sans-bold";
-  font-size: 14px;
+  font-size: 12px;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 

@@ -67,9 +67,10 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
   background-color: var(--header-footer-color);
   height: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .hamburger-btn {
@@ -150,7 +151,7 @@ a {
 @media (max-width: 768px) {
   .nav-menu {
     position: absolute;
-    top: 60px;
+    top: 70px;
     right: 0;
     background-color: var(--header-footer-color);
     width: 100%;
@@ -158,10 +159,11 @@ a {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease;
+    z-index: 10;
   }
 
   .nav-menu.is-open {
-    max-height: 500px;
+    max-height: 600px;
   }
 
   .hamburger-btn {
@@ -169,8 +171,8 @@ a {
   }
 
   .nav-menu ul {
-    gap: 10px;
     flex-direction: column;
+    margin-bottom: 10px;
   }
 
   .nav-menu li {
@@ -182,6 +184,10 @@ a {
     width: 100%;
     text-align: left;
     padding: 10px;
+  }
+
+  .nav-menu li a.router-link-active {
+    border-bottom: none;
   }
 }
 </style>

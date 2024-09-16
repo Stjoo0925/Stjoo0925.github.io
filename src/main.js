@@ -8,8 +8,6 @@ import { createPinia } from "pinia";
 import router from "./router";
 import Swal from "sweetalert2";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 // 프로덕션 모드에서 Vue Devtools 비활성화

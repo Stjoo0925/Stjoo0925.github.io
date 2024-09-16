@@ -92,20 +92,19 @@ const goNext = () => {
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .app-header {
-  flex: 0 0 7vh;
+  height: 8vh; /* 헤더의 높이를 명확하게 지정 */
   width: 100%;
 }
 
 .app-section {
   position: relative;
-  flex: 1 1 auto;
+  height: 87vh; /* 섹션의 높이를 명확하게 지정 */
   width: 100%;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .nav-arrow {
@@ -120,11 +119,11 @@ const goNext = () => {
 }
 
 .left-arrow {
-  left: 10px;
+  left: 2px;
 }
 
 .right-arrow {
-  right: 10px;
+  right: 2px;
 }
 
 .nav-arrow:hover {
@@ -132,7 +131,7 @@ const goNext = () => {
 }
 
 .app-footer {
-  flex: 0 0 5vh;
+  height: 5vh; /* 푸터의 높이를 명확하게 지정 */
   width: 100%;
 }
 </style>
