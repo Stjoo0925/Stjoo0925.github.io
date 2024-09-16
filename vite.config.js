@@ -12,3 +12,10 @@ export default defineConfig({
     },
   },
 });
+
+module.exports = {
+  publicPath:
+    process.env.NODE_ENV === "production"
+      ? "/Stjoo0925.github.io/" // 리포지토리 이름으로 설정
+      : "/",
+};
