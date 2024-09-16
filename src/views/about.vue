@@ -246,7 +246,8 @@ h3 {
   .personal-info,
   .education-info,
   .characters,
-  .contributions {
+  .contributions,
+  .contributions-container {
     width: 100%; /* 각각 100% 폭을 가짐 */
     margin: 0 0 30px 0;
     padding: 15px; /* 내부 패딩 축소 */
