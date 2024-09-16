@@ -4,10 +4,6 @@ import { useRoute, useRouter } from "vue-router";
 import Header from "./components/header.vue";
 import Section from "./components/section.vue";
 import Footer from "./components/footer.vue";
-import { useTransitionStore } from "@/stores/transitionStore";
-
-// Pinia 스토어 사용
-const transitionStore = useTransitionStore();
 
 const router = useRouter();
 const route = useRoute();
@@ -38,8 +34,6 @@ watch(
 const goPrevious = () => {
   if (currentPageIndex.value > 0) {
     const prevPageIndex = currentPageIndex.value - 1;
-    // 슬라이드 방향을 'slide-right'로 설정 (이전 페이지로 이동하므로)
-    transitionStore.setDirection("slide-right");
     router.push(pages[prevPageIndex]).catch((err) => {
       console.error("Navigation error:", err);
     });
@@ -50,8 +44,6 @@ const goPrevious = () => {
 const goNext = () => {
   if (currentPageIndex.value < pages.length - 1) {
     const nextPageIndex = currentPageIndex.value + 1;
-    // 슬라이드 방향을 'slide-left'로 설정 (다음 페이지로 이동하므로)
-    transitionStore.setDirection("slide-left");
     router.push(pages[nextPageIndex]).catch((err) => {
       console.error("Navigation error:", err);
     });
@@ -100,6 +92,8 @@ const goNext = () => {
   flex-direction: column;
   height: 100vh;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .app-header {
