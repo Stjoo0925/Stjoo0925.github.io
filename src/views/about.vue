@@ -102,7 +102,7 @@ a {
 .about-img {
   flex: 4;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -121,7 +121,7 @@ a {
   text-align: center;
   font-family: "goorm-sans-bold";
   color: var(--font-color2);
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .about-content {
@@ -209,19 +209,23 @@ h3 {
 /* 작은 화면을 위한 미디어 쿼리 */
 @media (max-width: 768px) {
   .about-container {
-    flex-direction: column; /* 세로 배치로 변경 */
-    align-items: center;
+    display: block;
     overflow-y: auto; /* 세로 스크롤 활성화 */
   }
 
   .about-img,
   .about-profile {
-    flex: none; /* 플렉스 비율 해제 */
     width: 100%; /* 가로 폭을 100%로 설정 */
+    height: auto;
   }
 
   .about-img img {
     width: 100%; /* 이미지를 화면에 맞게 조정 */
+    height: auto;
+  }
+
+  .about-content {
+    display: block;
     height: auto;
   }
 
