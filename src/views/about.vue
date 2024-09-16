@@ -88,10 +88,14 @@ import { onMounted } from "vue";
 const githubId = "Stjoo0925"; // 여기에 깃허브 아이디를 입력합니다.
 
 onMounted(() => {
+  // CSS 변수에서 폰트 색상을 가져옴
+  const rootStyles = getComputedStyle(document.documentElement);
+  const fontColor = rootStyles.getPropertyValue("--font-color2").trim(); // --font-color 값 가져오기
+
   // TagCanvas 초기화
   try {
     TagCanvas.Start("myCanvas", "tags", {
-      textColour: "#000000", // 텍스트 색상
+      textColour: fontColor, // CSS 변수로부터 가져온 색상 적용
       outlineColour: null,
       reverse: true, // 텍스트 회전 방향
       depth: 0.8, // 3D 깊이
