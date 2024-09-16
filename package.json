@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "vue-cli-service build && main -d dist"
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "@sweetalert2/themes": "^5.0.18",
