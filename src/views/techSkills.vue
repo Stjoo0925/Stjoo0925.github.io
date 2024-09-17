@@ -90,7 +90,7 @@ const techStack = reactive([
       <div
         v-for="(tech, index) in techStack"
         :key="tech.name"
-        class="tech-card animate__animated animate__flipInX"
+        class="tech-card animate__animated animate__jackInTheBox"
         :style="{ 'animation-delay': index * 0.1 + 's' }"
       >
         <img :src="tech.logo" :alt="tech.name" />
@@ -107,7 +107,7 @@ const techStack = reactive([
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   overflow: hidden;
   padding: 20px;
