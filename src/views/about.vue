@@ -207,6 +207,10 @@ a {
 .characters,
 .contributions {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   padding: 20px;
   margin: 10px;
@@ -276,7 +280,7 @@ h3 {
 
 .github-stats,
 .github-contributions img {
-  width: 100%; /* 원하는 크기로 설정 */
+  width: 70%; /* 원하는 크기로 설정 */
   height: auto; /* 비율을 유지하면서 높이를 자동 조정 */
 }
 
