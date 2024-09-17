@@ -45,7 +45,7 @@
             <br />
             <!-- TagCanvas 적용할 위치 -->
             <div class="canvas-container">
-              <canvas id="myCanvas" width="500" height="200"></canvas>
+              <canvas id="myCanvas"></canvas>
               <div id="tags">
                 <ul>
                   <li><a href="#">논리적인</a></li>
@@ -221,6 +221,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .github-contributions {
@@ -232,6 +233,7 @@ a {
 }
 
 .contributions-container {
+  flex: 1;
   width: 100%;
   height: auto;
   background-color: var(--secondary-bg-color);
