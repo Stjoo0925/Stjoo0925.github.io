@@ -107,7 +107,7 @@ const techStack = reactive([
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   overflow: hidden;
   padding: 20px;
@@ -126,7 +126,6 @@ const techStack = reactive([
 }
 
 .title-container {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
