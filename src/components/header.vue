@@ -43,7 +43,7 @@ onUnmounted(() => {
         :class="isHovered ? 'animate__animated animate__jello' : ''"
       >
         <i class="bi bi-lightning-charge-fill header-img"></i>
-        <div class="header-title">JooSoonTae-Portfolio</div>
+        <div class="header-title">JooSoonTae | Portfolio</div>
       </div>
     </RouterLink>
 

@@ -5,25 +5,19 @@
         src="https://data1.pokemonkorea.co.kr/newdata/pokedex/full/000701.png"
         alt="Profile Image"
       />
-      <!-- 자기소개 문구 추가 -->
-      <p class="intro-text">
-        안녕하세요! 백엔드 개발자를 지망하는 주순태입니다. 항상 고민하고 방법을
-        찾는 개발자가 되겠습니다.
-      </p>
     </div>
     <div class="about-content">
       <div class="about-profile">
         <div class="profile-section">
           <div class="personal-info animate__animated animate__fadeInUp">
-            <div class="about-title">주순태</div>
+            <div class="about-title">About Me</div>
             <br />
             <ul class="about-list">
-              <li class="about-contents">생일: 1992.09.25</li>
-              <li class="about-contents">전화번호: +82 010-3494-3809</li>
-              <li class="about-contents">메일: stjoo0925@gmail.com</li>
+              <li class="about-contents">주순태</li>
+              <li class="about-contents">1992.09.25</li>
               <li class="about-contents">
-                Github:
-                <a :href="`https://github.com/${githubId}`">깃허브링크</a>
+                안녕하세요! 백엔드 개발자를 지망하는 주순태입니다.<br />
+                항상 고민하고 방법을 찾는 개발자가 되겠습니다.
               </li>
             </ul>
           </div>
