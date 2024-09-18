@@ -209,18 +209,21 @@ a {
   margin: 10px;
   padding: 10px;
   box-sizing: border-box;
+  background-color: var(--secondary-bg-color);
 }
 
 .card-title {
   font-family: "goorm-sans-bold";
   font-size: 21px;
   margin-bottom: 10px;
+  color: var(--font-color2);
 }
 
 .card-text {
   font-family: "goorm-sans-code";
   font-size: 14px;
   margin-bottom: 5px;
+  color: var(--font-color2);
 }
 
 .social-icons {
@@ -236,6 +239,7 @@ a {
   margin: 10px;
   padding: 10px;
   box-sizing: border-box;
+  background-color: var(--secondary-bg-color);
 }
 
 .social-icon {

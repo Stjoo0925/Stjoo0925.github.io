@@ -1,10 +1,11 @@
 :root {
-  --main-bg-color: #f2f2f2; /* 밝은 회색을 메인 배경으로 사용 */
-  --secondary-bg-color: #bfbfbf; /* 중간 회색을 세컨더리 배경으로 */
-  --primary-highlight-color: #595959; /* 어두운 회색을 주요 강조 색상으로 */
-  --secondary-highlight-color: #8c8c8c; /* 보조 강조 색상으로 어두운 회색 */
-  --alert-color: #de525e; /* 강조 색상 유지 */
-  --header-footer-color: #0d0d0d; /* 헤더와 푸터에 검정에 가까운 색상 */
-  --font-color: #ffffff; /* 폰트 색상을 흰색으로 */
-  --font-color2: #0d0d0d; /* 폰트 색상을 매우 어두운 색상으로 */
+  --main-bg-color: #1a1a1a; /* 짙은 차콜 블랙, 메인 배경 */
+  --secondary-bg-color: #2e2e2e; /* 중간 톤의 그레이 블랙, 보조 배경 */
+  --primary-highlight-color: #00ffff; /* 전기 블루, 주요 강조 색상 */
+  --secondary-highlight-color: #666666; /* 차분한 중간 그레이, 보조 강조 색상 */
+  --alert-color: #ff6b6b; /* 부드러운 레드, 경고 색상 */
+  --header-footer-color: #0d0d0d; /* 깊고 짙은 블랙, 헤더와 푸터 색상 */
+  --font-color: #ffffff; /* 흰색 폰트, 명료한 텍스트 강조 */
+  --font-color2: #f2f2f2; /* 밝은 그레이 폰트, 보조 텍스트 강조 */
+  --contribution-bg-color: #333333; /* 어두운 그레이, 컨트리뷰션 배경 */
 }

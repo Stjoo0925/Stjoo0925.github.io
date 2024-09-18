@@ -90,7 +90,9 @@ onMounted(() => {
   // TagCanvas 초기화
   try {
     TagCanvas.Start("myCanvas", "tags", {
-      textColour: fontColor, // CSS 변수로부터 가져온 색상 적용
+      textColour: getComputedStyle(document.documentElement)
+        .getPropertyValue("--font-color")
+        .trim(), // CSS 변수에서 색상 가져오기
       outlineColour: null,
       reverse: true, // 텍스트 회전 방향
       depth: 0.8, // 3D 깊이
@@ -234,7 +236,7 @@ a {
   flex: 1;
   width: 100%;
   height: auto;
-  background-color: var(--secondary-bg-color);
+  background-color: var(--contribution-bg-color);
   border-radius: 8px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   padding: 10px;
@@ -259,6 +261,7 @@ h3 {
   font-family: "goorm-sans-bold";
   font-size: 24px;
   margin-bottom: 5px;
+  color: var(--font-color);
 }
 
 .about-list {
@@ -270,6 +273,7 @@ h3 {
   font-family: "goorm-sans-code";
   font-size: 16px;
   margin-bottom: 5px;
+  color: var(--font-color);
 }
 
 .github-stats,

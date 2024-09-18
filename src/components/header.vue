@@ -36,12 +36,7 @@ onUnmounted(() => {
 <template>
   <header class="header-container">
     <RouterLink to="/">
-      <div
-        class="logo"
-        @mouseenter="isHovered = true"
-        @mouseleave="isHovered = false"
-        :class="isHovered ? 'animate__animated animate__jello' : ''"
-      >
+      <div class="logo">
         <i class="bi bi-lightning-charge-fill header-img"></i>
         <div class="header-title">JooSoonTae | Portfolio</div>
       </div>
