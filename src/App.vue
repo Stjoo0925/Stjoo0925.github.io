@@ -93,12 +93,9 @@ onBeforeUnmount(() => {
     <div class="app-header">
       <Header />
     </div>
-
     <div class="app-section">
-      <!-- Section 컴포넌트는 스토어를 통해 direction을 참조 -->
       <Section />
     </div>
-
     <div class="app-footer">
       <Footer />
     </div>
