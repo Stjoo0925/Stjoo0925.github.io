@@ -119,7 +119,7 @@ onBeforeUnmount(() => {
   height: 100vh;
   width: 100%;
   overflow: hidden;
-}
+}https://data1.pokemonkorea.co.kr/newdata/pokedex/full/000701.png
 
 .app-header {
   height: 8vh; /* 헤더의 높이를 명확하게 지정 */

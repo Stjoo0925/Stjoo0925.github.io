@@ -147,19 +147,21 @@ a {
 @media (max-width: 768px) {
   .nav-menu {
     position: absolute;
-    top: 70px;
+    top: 0; /* top을 0으로 변경 */
     right: 0;
     background-color: var(--header-footer-color);
     width: 100%;
     flex-direction: column;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease;
+    transform: translateY(-100%); /* 기본적으로 메뉴를 숨김 */
+    transition: transform 0.5s ease, max-height 0.5s ease;
     z-index: 10;
   }
 
   .nav-menu.is-open {
-    max-height: 600px;
+    transform: translateY(0); /* 메뉴가 열릴 때 */
+    max-height: 600px; /* 원하는 높이 지정 */
   }
 
   .hamburger-btn {
