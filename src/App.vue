@@ -50,6 +50,10 @@ const goNext = () => {
   }
 };
 
+// 미디어 쿼리 설정 (예: 화면 너비가 768px 미만일 때)
+const mediaQuery = window.matchMedia("(max-width: 768px)");
+const isMediaQueryMatched = ref(mediaQuery.matches);
+
 // 스크롤 제스처 감지
 const handleScroll = (event) => {
   if (event.deltaY > 0) {
@@ -59,13 +63,28 @@ const handleScroll = (event) => {
   }
 };
 
-// 이벤트 리스너 등록 및 해제
+// 미디어 쿼리 변화 감지 및 이벤트 리스너 등록/해제
+const handleMediaQueryChange = (e) => {
+  isMediaQueryMatched.value = e.matches;
+  if (isMediaQueryMatched.value) {
+    window.removeEventListener("wheel", handleScroll);
+  } else {
+    window.addEventListener("wheel", handleScroll);
+  }
+};
+
 onMounted(() => {
-  window.addEventListener("wheel", handleScroll); // 스크롤 이벤트 감지
+  // 초기 미디어 쿼리 상태에 따라 이벤트 리스너 등록
+  if (!isMediaQueryMatched.value) {
+    window.addEventListener("wheel", handleScroll);
+  }
+  // 미디어 쿼리 변화 감지 리스너 등록
+  mediaQuery.addEventListener("change", handleMediaQueryChange);
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("wheel", handleScroll);
+  mediaQuery.removeEventListener("change", handleMediaQueryChange);
 });
 </script>
 

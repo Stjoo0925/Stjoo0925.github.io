@@ -50,8 +50,6 @@
           </div>
           <div class="contributions animate__animated animate__fadeInUp">
             <div class="about-title">Contributions</div>
-            <br />
-            <!-- GitHub ReadMe Stats -->
             <img
               class="github-stats"
               :src="`https://github-readme-stats.vercel.app/api?username=${githubId}&theme=dark&show_icons=true`"
@@ -280,7 +278,7 @@ h3 {
 
 .github-stats,
 .github-contributions img {
-  width: 70%; /* 원하는 크기로 설정 */
+  width: 90%; /* 원하는 크기로 설정 */
   height: auto; /* 비율을 유지하면서 높이를 자동 조정 */
 }
 
