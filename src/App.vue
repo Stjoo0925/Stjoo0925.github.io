@@ -11,6 +11,8 @@ const route = useRoute();
 // 페이지 순서에 따른 경로 배열
 const pages = ["/", "/tech-skills", "/portfolio", "/contact"];
 const currentPageIndex = ref(pages.indexOf(route.path));
+const isMobile = ref(false); // 모바일 환경인지 확인
+const swipeThreshold = 50; // 스와이프 인식 최소 거리 설정
 
 // 초기 경로가 pages 배열에 없을 경우 기본 경로로 이동
 if (currentPageIndex.value === -1) {
@@ -50,12 +52,14 @@ const goNext = () => {
   }
 };
 
-// 스크롤 제스처 감지
+// 스크롤 제스처 감지 (데스크톱 환경)
 const handleScroll = (event) => {
-  if (event.deltaY > 0) {
-    goNext(); // 아래로 스크롤 시 다음 페이지
-  } else if (event.deltaY < 0) {
-    goPrevious(); // 위로 스크롤 시 이전 페이지
+  if (!isMobile.value) {
+    if (event.deltaY > 0) {
+      goNext(); // 아래로 스크롤 시 다음 페이지
+    } else if (event.deltaY < 0) {
+      goPrevious(); // 위로 스크롤 시 이전 페이지
+    }
   }
 };
 
@@ -64,31 +68,46 @@ let touchStartX = 0;
 let touchEndX = 0;
 
 const handleTouchStart = (event) => {
-  touchStartX = event.changedTouches[0].screenX;
+  if (isMobile.value) {
+    touchStartX = event.changedTouches[0].screenX;
+  }
 };
 
 const handleTouchEnd = (event) => {
-  touchEndX = event.changedTouches[0].screenX;
-  handleSwipeGesture();
+  if (isMobile.value) {
+    touchEndX = event.changedTouches[0].screenX;
+    handleSwipeGesture();
+  }
 };
 
 const handleSwipeGesture = () => {
-  if (touchEndX < touchStartX) {
-    goNext(); // 왼쪽에서 오른쪽으로 스와이프: 다음 페이지
+  const swipeDistance = touchEndX - touchStartX;
+
+  if (Math.abs(swipeDistance) > swipeThreshold) {
+    if (swipeDistance < 0) {
+      goNext(); // 왼쪽에서 오른쪽으로 스와이프: 다음 페이지
+    } else if (swipeDistance > 0) {
+      goPrevious(); // 오른쪽에서 왼쪽으로 스와이프: 이전 페이지
+    }
   }
-  if (touchEndX > touchStartX) {
-    goPrevious(); // 오른쪽에서 왼쪽으로 스와이프: 이전 페이지
-  }
+};
+
+// 화면 크기에 따라 모바일 환경인지 확인
+const checkIsMobile = () => {
+  isMobile.value = window.innerWidth <= 768;
 };
 
 // 이벤트 리스너 등록 및 해제
 onMounted(() => {
+  checkIsMobile(); // 처음 마운트될 때 환경 확인
+  window.addEventListener("resize", checkIsMobile); // 화면 크기 변경 시 확인
   window.addEventListener("wheel", handleScroll); // 스크롤 이벤트 감지
   window.addEventListener("touchstart", handleTouchStart); // 터치 시작 감지
   window.addEventListener("touchend", handleTouchEnd); // 터치 종료 감지
 });
 
 onBeforeUnmount(() => {
+  window.removeEventListener("resize", checkIsMobile);
   window.removeEventListener("wheel", handleScroll);
   window.removeEventListener("touchstart", handleTouchStart);
   window.removeEventListener("touchend", handleTouchEnd);
