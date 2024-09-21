@@ -50,10 +50,10 @@ const hoverIcon = (icon) => {
         <div class="card-contents">
           <h5 class="card-title">{{ contactInfo.name }}</h5>
           <p class="card-text">
-            <strong>이메일:</strong> {{ contactInfo.email }}
+            {{ contactInfo.email }}
           </p>
           <p class="card-text">
-            <strong>전화번호:</strong> {{ contactInfo.phone }}
+            {{ contactInfo.phone }}
           </p>
         </div>
 
@@ -210,12 +210,14 @@ a {
   padding: 10px;
   box-sizing: border-box;
   background-color: var(--secondary-bg-color);
+  border: 3px solid;
+  border-color: var(--secondary-highlight-color);
 }
 
 .card-title {
   font-family: "goorm-sans-bold";
   font-size: 21px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: var(--font-color2);
 }
 
@@ -240,6 +242,8 @@ a {
   padding: 10px;
   box-sizing: border-box;
   background-color: var(--secondary-bg-color);
+  border: 3px solid;
+  border-color: var(--secondary-highlight-color);
 }
 
 .social-icon {

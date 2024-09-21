@@ -74,7 +74,7 @@ const techStack = reactive([
   {
     name: "GitHub",
     logo: Github,
-    description: "Version Control & Collaboration",
+    description: "Collaboration",
   },
 ]);
 </script>
@@ -102,6 +102,10 @@ const techStack = reactive([
 </template>
 
 <style scoped>
+p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
 .tech-stack-container {
   width: 100%;
   height: 100%;
@@ -174,12 +178,13 @@ const techStack = reactive([
   align-items: center;
   justify-content: center;
   text-align: center;
+  border: 3px solid;
+  border-color: var(--secondary-highlight-color);
 }
 
 .tech-card img {
   width: 60px;
   height: 60px;
-  margin-bottom: 10px;
 }
 
 .tech-card h3 {

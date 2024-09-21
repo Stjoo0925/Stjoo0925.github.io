@@ -215,6 +215,8 @@ a {
   border-radius: 8px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
+  border: 3px solid;
+  border-color: var(--secondary-highlight-color);
 }
 
 .canvas-container {
@@ -245,6 +247,8 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 3px solid;
+  border-color: var(--secondary-highlight-color);
 }
 
 .github-contributions img {
