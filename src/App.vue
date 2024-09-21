@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from "vue";
+import { ref, watch, onMounted, onBeforeUnmount } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import Header from "./components/header.vue";
 import Section from "./components/section.vue";
@@ -49,6 +49,50 @@ const goNext = () => {
     });
   }
 };
+
+// 스크롤 제스처 감지
+const handleScroll = (event) => {
+  if (event.deltaY > 0) {
+    goNext(); // 아래로 스크롤 시 다음 페이지
+  } else if (event.deltaY < 0) {
+    goPrevious(); // 위로 스크롤 시 이전 페이지
+  }
+};
+
+// 모바일 스와이프 제스처 감지
+let touchStartX = 0;
+let touchEndX = 0;
+
+const handleTouchStart = (event) => {
+  touchStartX = event.changedTouches[0].screenX;
+};
+
+const handleTouchEnd = (event) => {
+  touchEndX = event.changedTouches[0].screenX;
+  handleSwipeGesture();
+};
+
+const handleSwipeGesture = () => {
+  if (touchEndX < touchStartX) {
+    goNext(); // 왼쪽에서 오른쪽으로 스와이프: 다음 페이지
+  }
+  if (touchEndX > touchStartX) {
+    goPrevious(); // 오른쪽에서 왼쪽으로 스와이프: 이전 페이지
+  }
+};
+
+// 이벤트 리스너 등록 및 해제
+onMounted(() => {
+  window.addEventListener("wheel", handleScroll); // 스크롤 이벤트 감지
+  window.addEventListener("touchstart", handleTouchStart); // 터치 시작 감지
+  window.addEventListener("touchend", handleTouchEnd); // 터치 종료 감지
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("wheel", handleScroll);
+  window.removeEventListener("touchstart", handleTouchStart);
+  window.removeEventListener("touchend", handleTouchEnd);
+});
 </script>
 
 <template>
@@ -58,26 +102,8 @@ const goNext = () => {
     </div>
 
     <div class="app-section">
-      <!-- 좌측 화살표 (이전 페이지) -->
-      <button
-        @click="goPrevious"
-        class="nav-arrow left-arrow"
-        v-if="currentPageIndex > 0"
-      >
-        <i class="bi bi-caret-left"></i>
-      </button>
-
       <!-- Section 컴포넌트는 스토어를 통해 direction을 참조 -->
       <Section />
-
-      <!-- 우측 화살표 (다음 페이지) -->
-      <button
-        @click="goNext"
-        class="nav-arrow right-arrow"
-        v-if="currentPageIndex < pages.length - 1"
-      >
-        <i class="bi bi-caret-right"></i>
-      </button>
     </div>
 
     <div class="app-footer">
@@ -105,29 +131,6 @@ const goNext = () => {
   height: 87vh; /* 섹션의 높이를 명확하게 지정 */
   width: 100%;
   overflow: hidden;
-}
-
-.nav-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 2rem;
-  color: var(--primary-highlight-color);
-}
-
-.left-arrow {
-  left: 2px;
-}
-
-.right-arrow {
-  right: 2px;
-}
-
-.nav-arrow:hover {
-  color: var(--secondary-highlight-color);
 }
 
 .app-footer {
