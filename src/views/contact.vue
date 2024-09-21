@@ -10,7 +10,7 @@ import Discord from "@/assets/images/Discord.svg";
 const contactInfo = {
   name: "주순태",
   email: "stjoo0925@gmail.com",
-  phone: "+82-10-3494-3809",
+  phone: "010-3494-3809",
   socialLinks: {
     gmail: "mailto:stjoo0925@mail.com",
     github: "https://github.com/Stjoo0925",
