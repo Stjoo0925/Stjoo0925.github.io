@@ -13,22 +13,18 @@
             <div class="about-title">About Me</div>
             <br />
             <ul class="about-list">
-              <li class="about-contents">주순태</li>
+              <li class="about-contents">주순태 | JOO SOON TAE</li>
               <li class="about-contents">1992.09.25</li>
-              <li class="about-contents">
-                안녕하세요! 백엔드 개발자를 지망하는 주순태입니다.<br />
-                항상 고민하고 방법을 찾는 개발자가 되겠습니다.
-              </li>
+              <li class="about-contents">항상 고민하고 방법을 찾는 개발자가 되겠습니다!</li>
             </ul>
           </div>
           <div class="education-info animate__animated animate__fadeInUp">
             <div class="about-title">Education</div>
             <br />
             <ul class="about-list">
-              <li class="about-contents">
-                2024.02 숭실사이버대학교 건설시스템공학과 졸업
-              </li>
-              <li class="about-contents">2011.02 서울 대원고등학교 졸업</li>
+              <li class="about-contents">2024.10 | 하이미디어아카데미 클라우드 기반의 자바 풀스택 수료</li>
+              <li class="about-contents">2024.02 | 숭실사이버대학교 건설시스템공학과 졸업</li>
+              <li class="about-contents">2011.02 | 서울 대원고등학교 졸업</li>
             </ul>
           </div>
         </div>
@@ -271,11 +267,13 @@ h3 {
 .about-list {
   list-style-type: disc;
   padding-left: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 .about-contents {
   font-family: "goorm-sans-code";
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: 5px;
   color: var(--font-color);
 }
