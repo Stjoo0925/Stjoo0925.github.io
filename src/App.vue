@@ -12,7 +12,7 @@ const route = useRoute();
 const pages = ["/", "/tech-skills", "/portfolio", "/contact"];
 const currentPageIndex = ref(pages.indexOf(route.path));
 const isMobile = ref(false); // 모바일 환경인지 확인
-const swipeThreshold = 50; // 스와이프 인식 최소 거리 설정
+const swipeThreshold = 100; // 스와이프 인식 최소 거리 설정
 
 // 초기 경로가 pages 배열에 없을 경우 기본 경로로 이동
 if (currentPageIndex.value === -1) {
