@@ -126,6 +126,7 @@ a {
 .contact-container {
   width: 100%;
   height: 100%;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -178,22 +179,27 @@ a {
 
 /* 카드 형식 연락처 스타일 */
 .contact-card {
-  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
   height: 100%;
-  max-width: 1000px;
-  max-height: 300px;
-  padding: 20px;
-  border-radius: 10px;
+  min-height: 250px;
 }
 
 .card-body {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
   height: 100%;
-  margin: 10px;
+  min-width: 1000px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .card-contents {
@@ -274,38 +280,33 @@ a {
 /* 미디어 쿼리 - 화면이 768px 이하일 때 적용 */
 @media screen and (max-width: 768px) {
   .contact-card {
-    max-height: none; /* 높이 제한 해제 */
-    padding: 10px;
+    padding: 5px;
+    width: 100%; /* 카드가 화면 전체 너비를 차지하도록 설정 */
   }
 
   .card-body {
-    flex-direction: column; /* 수직 레이아웃으로 변경 */
-  }
-
-  .card-contents {
-    margin: 5px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%; /* 최대 너비 제한 해제 */
     padding: 5px;
   }
 
-  .card-title {
-    font-size: 18px; /* 제목 크기 줄이기 */
-  }
-
-  .card-text {
-    font-size: 12px; /* 텍스트 크기 줄이기 */
+  .card-contents,
+  .social-icons {
+    width: 40%;
   }
 
   .social-icons {
-    flex-direction: row; /* 아이콘을 수직으로 나열 */
+    gap: 5px; /* 아이콘 사이의 간격 조절 */
   }
 
   .social-icon img {
-    width: 40px; /* 아이콘 크기 줄이기 */
-    height: 40px;
+    width: 30px; /* 작은 화면에서 아이콘 크기 조절 */
+    height: 30px;
   }
 
   .social-icon p {
-    font-size: 12px; /* 아이콘 텍스트 크기 줄이기 */
+    font-size: 10px; /* 아이콘 텍스트 크기 조절 */
   }
 }
 

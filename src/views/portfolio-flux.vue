@@ -19,6 +19,24 @@ const goBack = () => {
       </p>
     </div>
 
+    <!-- 아이콘 링크 영역 -->
+    <div class="project-links">
+      <a href="https://github.com/Flux2024" target="_blank" aria-label="GitHub">
+        <img src="@/assets/images/github.svg" alt="GitHub Logo" class="logo" />
+      </a>
+      <a
+        href="https://flux-front-server.vercel.app/"
+        target="_blank"
+        aria-label="Live Site"
+      >
+        <img
+          src="@/assets/images/vercel.svg"
+          alt="Live Site Logo"
+          class="logo"
+        />
+      </a>
+    </div>
+
     <!-- 프로젝트 소개 영역 -->
     <section class="project-overview">
       <h2 class="section-title">프로젝트 소개</h2>
@@ -33,31 +51,6 @@ const goBack = () => {
         합니다.<br /><br />
         목표기간 : 2024.07.15 ~ 08.07(기간연장 08.16)
       </p>
-      <!-- 아이콘 링크 영역 -->
-      <div class="project-links">
-        <a
-          href="https://github.com/Flux2024"
-          target="_blank"
-          aria-label="GitHub"
-        >
-          <img
-            src="@/assets/images/github.svg"
-            alt="GitHub Logo"
-            class="logo"
-          />
-        </a>
-        <a
-          href="https://flux-front-server.vercel.app/"
-          target="_blank"
-          aria-label="Live Site"
-        >
-          <img
-            src="@/assets/images/vercel.svg"
-            alt="Live Site Logo"
-            class="logo"
-          />
-        </a>
-      </div>
     </section>
 
     <!-- 기여 내역 영역 -->
@@ -205,7 +198,7 @@ const goBack = () => {
 /* 프로젝트 링크 영역 스타일 */
 .project-links {
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .project-links a {

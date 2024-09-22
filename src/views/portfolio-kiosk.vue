@@ -17,6 +17,24 @@ const goBack = () => {
       <p class="project-subtitle">Vue.js를 활용한 햄버거 키오스크</p>
     </div>
 
+    <!-- 아이콘 링크 영역 -->
+    <div class="project-links">
+      <a
+        href="https://github.com/Stjoo0925/Vue-project"
+        target="_blank"
+        aria-label="GitHub"
+      >
+        <img src="@/assets/images/github.svg" alt="Github Logo" class="logo" />
+      </a>
+      <a
+        href="https://burgerkiosk.vercel.app/"
+        target="_blank"
+        aria-label="Vercel"
+      >
+        <img src="@/assets/images/vercel.svg" alt="Vercel Logo" class="logo" />
+      </a>
+    </div>
+
     <!-- 프로젝트 소개 영역 -->
     <section class="project-overview">
       <h2 class="section-title">프로젝트 소개</h2>
@@ -26,31 +44,6 @@ const goBack = () => {
         구성되었으며, 사용자 친화적인 UI와 다양한 기능을 제공합니다.<br /><br />
         목표기간 : 24.05.23 - 06.12
       </p>
-      <!-- 아이콘 링크 영역 -->
-      <div class="project-links">
-        <a
-          href="https://github.com/Stjoo0925/Vue-project"
-          target="_blank"
-          aria-label="GitHub"
-        >
-          <img
-            src="@/assets/images/github.svg"
-            alt="Github Logo"
-            class="logo"
-          />
-        </a>
-        <a
-          href="https://burgerkiosk.vercel.app/"
-          target="_blank"
-          aria-label="Vercel"
-        >
-          <img
-            src="@/assets/images/vercel.svg"
-            alt="Vercel Logo"
-            class="logo"
-          />
-        </a>
-      </div>
     </section>
 
     <!-- 기여 내역 영역 -->
@@ -188,7 +181,7 @@ const goBack = () => {
 
 .project-links {
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .project-links a {
