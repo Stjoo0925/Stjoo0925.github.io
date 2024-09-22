@@ -92,7 +92,7 @@ const cicd = reactive([
     </div>
 
     <div class="backend-container">
-      <div class="scription2">Back-end Part</div>
+      <div class="scription2">BackEnd Part</div>
       <div class="tech-card-container">
         <div
           v-for="(tech, index) in backend"
@@ -108,7 +108,7 @@ const cicd = reactive([
     </div>
 
     <div class="frontend-container">
-      <div class="scription2">Front-end Part</div>
+      <div class="scription2">FrontEnd Part</div>
       <div class="tech-card-container">
         <div
           v-for="(tech, index) in frontend"
@@ -124,7 +124,7 @@ const cicd = reactive([
     </div>
 
     <div class="cicd-container">
-      <div class="scription2">CI/CD Part</div>
+      <div class="scription2">DevOps Part</div>
       <div class="tech-card-container">
         <div
           v-for="(tech, index) in cicd"
@@ -200,7 +200,7 @@ p {
 
 .scription2 {
   font-family: "goorm-sans-bold";
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: 10px;
   color: var(--font-color2);
 }
