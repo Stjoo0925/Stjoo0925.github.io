@@ -200,7 +200,7 @@ p {
 .scription2 {
   font-family: "goorm-sans-bold";
   font-size: 0.9rem;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   color: var(--font-color2);
 }
 

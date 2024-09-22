@@ -69,7 +69,7 @@ const hoverIcon = (icon) => {
               'animate__animated animate__rubberBand': activeIcon === 'gmail',
             }"
           >
-            <img :src="contactInfo.socialIcons.gmail" />
+            <img :src="contactInfo.socialIcons.gmail" alt="Gmail" />
             <p>Gmail</p>
           </a>
           <a
@@ -82,7 +82,7 @@ const hoverIcon = (icon) => {
               'animate__animated animate__rubberBand': activeIcon === 'github',
             }"
           >
-            <img :src="contactInfo.socialIcons.github" />
+            <img :src="contactInfo.socialIcons.github" alt="Github" />
             <p>Github</p>
           </a>
           <a
@@ -95,7 +95,7 @@ const hoverIcon = (icon) => {
               'animate__animated animate__rubberBand': activeIcon === 'velog',
             }"
           >
-            <img :src="contactInfo.socialIcons.velog" />
+            <img :src="contactInfo.socialIcons.velog" alt="Velog" />
             <p>Velog</p>
           </a>
           <a
@@ -108,7 +108,7 @@ const hoverIcon = (icon) => {
               'animate__animated animate__rubberBand': activeIcon === 'discord',
             }"
           >
-            <img :src="contactInfo.socialIcons.discord" />
+            <img :src="contactInfo.socialIcons.discord" alt="Discord" />
             <p>Discord</p>
           </a>
         </div>
@@ -118,6 +118,7 @@ const hoverIcon = (icon) => {
 </template>
 
 <style scoped>
+/* 전역 a 태그 스타일 */
 a {
   text-decoration: none;
   color: var(--font-color2);
@@ -126,25 +127,25 @@ a {
 .contact-container {
   width: 100%;
   height: 100%;
-  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
+  overflow: hidden; /* 필요에 따라 조정 */
   padding: 20px;
   box-sizing: border-box;
+  min-height: 400px;
   max-height: 100vh;
 }
 
 .contact-container-scrollable {
   overflow-y: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .contact-container-scrollable::-webkit-scrollbar {
-  display: none;
+  display: none; /* Chrome, Safari */
 }
 
 .title-container {
@@ -152,6 +153,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .title {
@@ -177,47 +179,40 @@ a {
   color: var(--font-color2);
 }
 
-/* 카드 형식 연락처 스타일 */
 .contact-card {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  min-height: 250px;
 }
 
 .card-body {
   width: 100%;
-  height: 100%;
-  min-width: 1000px;
-  max-height: 500px;
   display: flex;
-  flex-direction: row;
-  gap: 20px;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  border-radius: 10px;
 }
 
+/* 카드 내용 */
 .card-contents {
-  flex: 1;
   width: 100%;
-  height: 100%;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  margin: 10px;
-  padding: 10px;
   box-sizing: border-box;
   background-color: var(--secondary-bg-color);
-  border: 3px solid;
-  border-color: var(--secondary-highlight-color);
+  border: 3px solid var(--secondary-highlight-color);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
 }
 
 .card-title {
@@ -234,22 +229,20 @@ a {
   color: var(--font-color2);
 }
 
+/* 소셜 아이콘 */
 .social-icons {
-  flex: 1;
   width: 100%;
-  height: 100%;
+  height: 200px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   border-radius: 10px;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  margin: 10px;
-  padding: 10px;
   box-sizing: border-box;
   background-color: var(--secondary-bg-color);
-  border: 3px solid;
-  border-color: var(--secondary-highlight-color);
+  border: 3px solid var(--secondary-highlight-color);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
 }
 
 .social-icon {
@@ -257,14 +250,12 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: color 0.3s, fill 0.3s;
+  transition: transform 0.3s, color 0.3s;
 }
 
 .social-icon img {
   width: 50px;
   height: 50px;
-  font-size: 2.5rem;
-  color: var(--font-color2);
   margin: 5px;
 }
 
@@ -272,65 +263,114 @@ a {
   font-family: "goorm-sans-code";
   font-size: 14px;
   font-weight: 700;
-  margin-bottom: 5px;
+  margin-top: 5px;
   text-align: center;
-  transition: filter 0.3s;
+  transition: transform 0.3s;
 }
 
-/* 미디어 쿼리 - 화면이 768px 이하일 때 적용 */
-@media screen and (max-width: 768px) {
-  .contact-card {
-    padding: 5px;
-    width: 100%; /* 카드가 화면 전체 너비를 차지하도록 설정 */
-  }
+/* 호버 효과 */
+.social-icon.animate__animated.animate__rubberBand {
+  transform: scale(1.2);
+}
 
+/* 작은 화면을 위한 미디어 쿼리 */
+@media screen and (max-width: 1200px) {
+  .card-body {
+    max-width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
   .card-body {
     flex-direction: column;
-    width: 100%;
-    max-width: 100%; /* 최대 너비 제한 해제 */
-    padding: 5px;
+    align-items: center;
   }
 
   .card-contents,
   .social-icons {
-    width: 40%;
+    width: 100%;
+    max-width: 500px;
   }
 
   .social-icons {
-    gap: 5px; /* 아이콘 사이의 간격 조절 */
-  }
-
-  .social-icon img {
-    width: 30px; /* 작은 화면에서 아이콘 크기 조절 */
-    height: 30px;
-  }
-
-  .social-icon p {
-    font-size: 10px; /* 아이콘 텍스트 크기 조절 */
+    justify-content: space-around;
+    gap: 10px;
   }
 }
 
-/* 미디어 쿼리 - 화면이 480px 이하일 때 적용 */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
+  .contact-container {
+    padding: 10px;
+  }
+
   .title {
-    font-size: 1.4rem; /* 제목 크기 더 줄이기 */
+    font-size: 1.5rem;
   }
 
-  .card-title {
-    font-size: 16px; /* 제목 크기 더 줄이기 */
+  .title-line {
+    width: 80px;
   }
 
-  .card-text {
-    font-size: 10px; /* 텍스트 크기 더 줄이기 */
+  .scription {
+    font-size: 0.9rem;
+  }
+
+  .card-body {
+    padding: 10px;
+  }
+
+  .card-contents,
+  .social-icons {
+    width: 100%;
+    max-width: 100%;
   }
 
   .social-icon img {
-    width: 30px; /* 아이콘 크기 더 줄이기 */
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-icon p {
+    font-size: 12px;
+  }
+
+  .social-icon.animate__animated.animate__rubberBand {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .title-line {
+    width: 60px;
+  }
+
+  .scription {
+    font-size: 0.8rem;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-text {
+    font-size: 12px;
+  }
+
+  .social-icon img {
+    width: 30px;
     height: 30px;
   }
 
   .social-icon p {
-    font-size: 10px; /* 아이콘 텍스트 크기 더 줄이기 */
+    font-size: 10px;
+  }
+
+  .social-icon.animate__animated.animate__rubberBand {
+    transform: scale(1);
   }
 }
 </style>
