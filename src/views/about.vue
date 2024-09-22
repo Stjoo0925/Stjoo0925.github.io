@@ -67,9 +67,15 @@
       <!-- GitHub 잔디 그래프 추가 -->
       <div class="github-contributions animate__animated animate__fadeInUp">
         <div class="contributions-container">
+          <!-- 로딩 스피너 표시 -->
+          <LoadingSpinner v-if="isLoading" />
+          <!-- 실제 GitHub 잔디 그래프 이미지 -->
           <img
-            :src="`https://ghchart.rshah.org/0d0d0d/${githubId}`"
+            v-else
+            :src="`https://ghchart.rshah.org/0d0d0d/${githubId}?${Date.now()}`"
             alt="GitHub Contributions Graph"
+            @load="onImageLoad"
+            @error="onImageError"
           />
         </div>
       </div>
@@ -78,11 +84,22 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
-const githubId = "Stjoo0925"; // 여기에 깃허브 아이디를 입력합니다.
+import { ref, onMounted } from "vue";
+import LoadingSpinner from "@/components/loadingSpinner.vue";
+
+const githubId = "Stjoo0925";
+
+const isLoading = ref(true);
+
 let timeoutId = null;
 
 onMounted(() => {
+  setTimeout(() => {
+    if (isLoading.value) {
+      isLoading.value = false;
+    }
+  }, 1200);
+
   // CSS 변수에서 폰트 색상을 가져옴
   const rootStyles = getComputedStyle(document.documentElement);
   const fontColor = rootStyles.getPropertyValue("--font-color2").trim(); // --font-color 값 가져오기
@@ -90,9 +107,7 @@ onMounted(() => {
   // TagCanvas 초기화
   try {
     TagCanvas.Start("myCanvas", "tags", {
-      textColour: getComputedStyle(document.documentElement)
-        .getPropertyValue("--font-color")
-        .trim(), // CSS 변수에서 색상 가져오기
+      textColour: fontColor,
       outlineColour: null,
       reverse: true, // 텍스트 회전 방향
       depth: 0.8, // 3D 깊이
@@ -138,8 +153,9 @@ a {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 40px;
   box-sizing: border-box;
+  background-color: var(--main-bg-color);
 }
 
 .about-container-scrollable {

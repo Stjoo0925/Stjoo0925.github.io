@@ -131,11 +131,11 @@ a {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden; /* 필요에 따라 조정 */
-  padding: 20px;
+  padding: 40px;
   box-sizing: border-box;
   min-height: 400px;
   max-height: 100vh;
+  background-color: var(--main-bg-color);
 }
 
 .contact-container-scrollable {
@@ -299,10 +299,6 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  .contact-container {
-    padding: 10px;
-  }
-
   .title {
     font-size: 1.5rem;
   }

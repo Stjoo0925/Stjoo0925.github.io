@@ -8,4 +8,5 @@
   --font-color: #ffffff; /* 흰색 폰트, 명료한 텍스트 강조 */
   --font-color2: #f2f2f2; /* 밝은 그레이 폰트, 보조 텍스트 강조 */
   --contribution-bg-color: #333333; /* 어두운 그레이, 컨트리뷰션 배경 */
+  --portfolio-bg-color: #353839;
 }

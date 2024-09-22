@@ -136,10 +136,10 @@ const goBack = () => {
 /* 컨테이너 스타일 */
 .flux-project-container {
   height: 100%;
-  padding: 20px;
+  padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  overflow: hidden;
+  background-color: var(--portfolio-bg-color);
 }
 
 .flux-project-container-scrollable {
@@ -260,7 +260,7 @@ const goBack = () => {
 .image-item img {
   width: 100%;
   height: 200px; /* 모든 이미지를 높이 200px로 설정 */
-  border: 3px solid var(--secondary-highlight-color);
+  border: 3px solid var(--header-footer-color);
   object-fit: cover; /* 이미지 비율을 유지하면서 영역에 맞게 잘라냄 */
   border-radius: 5px;
   margin-bottom: 5px;

@@ -89,9 +89,10 @@ const navigateTo = (path) => {
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  padding: 20px;
+  padding: 40px;
   box-sizing: border-box;
   max-height: 100vh;
+  background-color: var(--main-bg-color);
 }
 
 .portfolio-container-scrollable {

@@ -153,8 +153,9 @@ p {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 40px;
   box-sizing: border-box;
+  background-color: var(--main-bg-color);
 }
 
 .tech-stack-container-scrollable {
