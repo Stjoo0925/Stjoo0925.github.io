@@ -131,23 +131,15 @@ a {
   color: var(--alert-color);
 }
 
-.particles-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* 콘텐츠보다 뒤에 오도록 설정 */
-}
-
 .about-container {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: hidden; /* 기본적으로 스크롤을 숨김 */
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .about-container-scrollable {
@@ -217,7 +209,7 @@ a {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   margin: 10px;
   box-sizing: border-box;
   background-color: var(--secondary-bg-color);

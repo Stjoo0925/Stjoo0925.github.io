@@ -153,10 +153,8 @@ p {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
   padding: 20px;
   box-sizing: border-box;
-  max-height: 100vh;
 }
 
 .tech-stack-container-scrollable {
@@ -220,7 +218,6 @@ p {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  padding: 20px;
   justify-items: center;
 }
 

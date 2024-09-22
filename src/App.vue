@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import Header from "./components/header.vue";
 import Section from "./components/section.vue";
@@ -8,85 +8,12 @@ import Footer from "./components/footer.vue";
 const router = useRouter();
 const route = useRoute();
 
-// 페이지 순서에 따른 경로 배열
-const pages = ["/", "/tech-skills", "/portfolio", "/contact"];
-const currentPageIndex = ref(pages.indexOf(route.path));
-
-// 라우트 경로 변화 감지 후 인덱스 업데이트
-watch(
-  () => route.path,
-  (newPath) => {
-    const newIndex = pages.indexOf(newPath);
-    if (newIndex !== -1) {
-      currentPageIndex.value = newIndex;
-    } else {
-      currentPageIndex.value = -1; // pages 배열에 없는 경로일 경우
-    }
-  }
-);
-
-// 이전 페이지로 이동
-const goPrevious = () => {
-  if (currentPageIndex.value > 0) {
-    const prevPageIndex = currentPageIndex.value - 1;
-    router.push(pages[prevPageIndex]).catch((err) => {
-      console.error("Navigation error:", err);
-    });
-  }
-};
-
-// 다음 페이지로 이동
-const goNext = () => {
-  if (
-    currentPageIndex.value >= 0 &&
-    currentPageIndex.value < pages.length - 1
-  ) {
-    const nextPageIndex = currentPageIndex.value + 1;
-    router.push(pages[nextPageIndex]).catch((err) => {
-      console.error("Navigation error:", err);
-    });
-  }
-};
-
 // 미디어 쿼리 설정 (예: 화면 너비가 768px 미만일 때)
 const mediaQuery = window.matchMedia("(max-width: 768px)");
 const isMediaQueryMatched = ref(mediaQuery.matches);
 
-// 스크롤 제스처 감지
-const handleScroll = (event) => {
-  if (currentPageIndex.value === -1) {
-    return; // 스크롤 네비게이션 비활성화
-  }
-  if (event.deltaY > 0) {
-    goNext(); // 아래로 스크롤 시 다음 페이지
-  } else if (event.deltaY < 0) {
-    goPrevious(); // 위로 스크롤 시 이전 페이지
-  }
-};
-
-// 미디어 쿼리 변화 감지 및 이벤트 리스너 등록/해제
-const handleMediaQueryChange = (e) => {
-  isMediaQueryMatched.value = e.matches;
-  if (isMediaQueryMatched.value) {
-    window.removeEventListener("wheel", handleScroll);
-  } else {
-    window.addEventListener("wheel", handleScroll);
-  }
-};
-
-onMounted(() => {
-  // 초기 미디어 쿼리 상태에 따라 이벤트 리스너 등록
-  if (!isMediaQueryMatched.value) {
-    window.addEventListener("wheel", handleScroll);
-  }
-  // 미디어 쿼리 변화 감지 리스너 등록
-  mediaQuery.addEventListener("change", handleMediaQueryChange);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener("wheel", handleScroll);
-  mediaQuery.removeEventListener("change", handleMediaQueryChange);
-});
+// 만약 다른 기능을 추가하고 싶다면 여기에 작성
+// 현재 스크롤 네비게이션과 관련된 기능은 제거됨
 </script>
 
 <template>
