@@ -14,7 +14,7 @@ import Github from "@/assets/images/Github-Light.svg";
 import Docker from "@/assets/images/Docker.svg";
 import Jenkins from "@/assets/images/Jenkins-Light.svg";
 
-const techStack = reactive([
+const backend = reactive([
   {
     name: "Java",
     logo: Java,
@@ -35,6 +35,8 @@ const techStack = reactive([
     logo: Jpa,
     description: "Data Persistence",
   },
+]);
+const frontend = reactive([
   {
     name: "HTML",
     logo: HTML,
@@ -55,6 +57,8 @@ const techStack = reactive([
     logo: Vue,
     description: "Front-end Framework",
   },
+]);
+const cicd = reactive([
   {
     name: "Docker",
     logo: Docker,
@@ -84,18 +88,54 @@ const techStack = reactive([
     <div class="title-container">
       <div class="title">기술스택</div>
       <hr class="title-line" />
-      <div class="scription">끊임없이 새로운 기술을 탐구하고 배우겠습니다.</div>
+      <div class="scription">끊임없이 새로운 기술을 탐구하고 배우겠습니다</div>
     </div>
-    <div class="tech-card-container">
-      <div
-        v-for="(tech, index) in techStack"
-        :key="tech.name"
-        class="tech-card animate__animated animate__jackInTheBox"
-        :style="{ 'animation-delay': index * 0.1 + 's' }"
-      >
-        <img :src="tech.logo" :alt="tech.name" />
-        <h3>{{ tech.name }}</h3>
-        <p>{{ tech.description }}</p>
+
+    <div class="backend-container">
+      <div class="scription2">Back-end Part</div>
+      <div class="tech-card-container">
+        <div
+          v-for="(tech, index) in backend"
+          :key="tech.name"
+          class="tech-card animate__animated animate__jackInTheBox"
+          :style="{ 'animation-delay': index * 0.1 + 's' }"
+        >
+          <img :src="tech.logo" :alt="tech.name" />
+          <h3>{{ tech.name }}</h3>
+          <p>{{ tech.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="frontend-container">
+      <div class="scription2">Front-end Part</div>
+      <div class="tech-card-container">
+        <div
+          v-for="(tech, index) in frontend"
+          :key="tech.name"
+          class="tech-card animate__animated animate__jackInTheBox"
+          :style="{ 'animation-delay': index * 0.1 + 's' }"
+        >
+          <img :src="tech.logo" :alt="tech.name" />
+          <h3>{{ tech.name }}</h3>
+          <p>{{ tech.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cicd-container">
+      <div class="scription2">CI/CD Part</div>
+      <div class="tech-card-container">
+        <div
+          v-for="(tech, index) in cicd"
+          :key="tech.name"
+          class="tech-card animate__animated animate__jackInTheBox"
+          :style="{ 'animation-delay': index * 0.1 + 's' }"
+        >
+          <img :src="tech.logo" :alt="tech.name" />
+          <h3>{{ tech.name }}</h3>
+          <p>{{ tech.description }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -159,17 +199,34 @@ p {
   color: var(--font-color2);
 }
 
+.scription2 {
+  font-family: "goorm-sans-bold";
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: var(--font-color2);
+}
+
+.backend-container,
+.frontend-container,
+.cicd-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .tech-card-container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px;
   justify-items: center;
 }
 
 .tech-card {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 120px;
   background-color: var(--secondary-bg-color);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -224,7 +281,7 @@ p {
 
 @media (max-width: 768px) {
   .tech-card-container {
-    grid-template-columns: repeat(3, 1fr); /* 한 줄에 3개 */
+    grid-template-columns: repeat(2, 1fr); /* 한 줄에 3개 */
   }
 
   .tech-card {

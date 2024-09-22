@@ -1,11 +1,17 @@
-<script setup></script>
+<script setup>
+import { useRouter } from "vue-router";
+const router = useRouter();
+const navigateTo = (path) => {
+  router.push(path);
+};
+</script>
 
 <template>
   <div class="portfolio-container portfolio-container-scrollable">
     <div class="title-container">
       <div class="title">포트폴리오</div>
       <hr class="title-line" />
-      <div class="scription">작업한 프로젝트 현황입니다.</div>
+      <div class="scription">작업한 프로젝트 현황입니다</div>
     </div>
     <div class="portfolio-silde">
       <!-- 자동 슬라이드 기능을 추가 -->
@@ -13,6 +19,7 @@
         id="carouselExampleCaptions"
         class="carousel slide"
         data-bs-ride="carousel"
+        data-bs-theme="dark"
       >
         <div class="carousel-indicators">
           <button
@@ -37,30 +44,58 @@
           ></button>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="2000">
-            <img src="\Thumbnail.png" class="d-block w-100" alt="..." />
+          <div
+            class="carousel-item active"
+            data-bs-interval="3000"
+            @click="navigateTo('/portfolio/kiosk')"
+            style="cursor: pointer"
+          >
+            <img
+              src="@/assets/images/background/vue-project.png"
+              class="d-block w-100"
+              alt="..."
+            />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5>Vue.js Project</h5>
+              <p>Vue.js를 이용한 햄버거 키오스크 프로젝트</p>
+            </div>
+          </div>
+          <div
+            class="carousel-item"
+            data-bs-interval="3000"
+            @click="navigateTo('/portfolio/flux')"
+            style="cursor: pointer"
+          >
+            <img
+              src="@/assets/images/background/flux-project.png"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Flux project</h5>
               <p>
-                Some representative placeholder content for the first slide.
+                스프링프레임워크와 뷰프레임워크를 이용한 전자상거래플랫폼
+                프로젝트
               </p>
             </div>
           </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img src="\Thumbnail.png" class="d-block w-100" alt="..." />
+          <div
+            class="carousel-item"
+            data-bs-interval="3000"
+            @click="navigateTo('/portfolio/leafresh')"
+            style="cursor: pointer"
+          >
+            <img
+              src="@/assets/images/background/leafresh-project.png"
+              class="d-block w-100"
+              alt="..."
+              style="object-fit: cover"
+            />
             <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
+              <h5>Leafresh project</h5>
               <p>
-                Some representative placeholder content for the second slide.
-              </p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="\Thumbnail.png" class="d-block w-100" alt="..." />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>
-                Some representative placeholder content for the third slide.
+                스프링프레임워크와 뷰프레임워크를 이용한 SNS스타일의
+                원예일지플랫폼 프로젝트
               </p>
             </div>
           </div>
@@ -146,5 +181,23 @@
   max-width: 1000px;
   width: 100%;
   height: auto;
+}
+
+.carousel-caption h5 {
+  font-family: "goorm-sans-bold";
+  font-size: 1.2rem;
+  color: var(--font-color);
+  background-color: var(--header-footer-color);
+  padding: 0.2em 0.5em;
+  border-radius: 5px;
+}
+
+.carousel-caption p {
+  font-family: "goorm-sans-code";
+  font-size: 0.8rem;
+  color: var(--font-color);
+  background-color: var(--header-footer-color);
+  padding: 0.2em 0.5em;
+  border-radius: 5px;
 }
 </style>

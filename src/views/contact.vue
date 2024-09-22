@@ -40,7 +40,7 @@ const hoverIcon = (icon) => {
       <div class="title">연락처</div>
       <hr class="title-line" />
       <div class="scription">
-        연락을 주시면 최대한 빠른 답신을 드리겠습니다.
+        편하게 연락 주시면, 빠르고 친절하게 답변 드리겠습니다
       </div>
     </div>
 

@@ -12,11 +12,6 @@ const route = useRoute();
 const pages = ["/", "/tech-skills", "/portfolio", "/contact"];
 const currentPageIndex = ref(pages.indexOf(route.path));
 
-// 초기 경로가 pages 배열에 없을 경우 기본 경로로 이동
-if (currentPageIndex.value === -1) {
-  router.push(pages[0]); // 기본 경로로 이동
-}
-
 // 라우트 경로 변화 감지 후 인덱스 업데이트
 watch(
   () => route.path,
@@ -25,7 +20,7 @@ watch(
     if (newIndex !== -1) {
       currentPageIndex.value = newIndex;
     } else {
-      router.push(pages[0]); // 잘못된 경로일 경우 기본 경로로 이동
+      currentPageIndex.value = -1; // pages 배열에 없는 경로일 경우
     }
   }
 );
@@ -42,7 +37,10 @@ const goPrevious = () => {
 
 // 다음 페이지로 이동
 const goNext = () => {
-  if (currentPageIndex.value < pages.length - 1) {
+  if (
+    currentPageIndex.value >= 0 &&
+    currentPageIndex.value < pages.length - 1
+  ) {
     const nextPageIndex = currentPageIndex.value + 1;
     router.push(pages[nextPageIndex]).catch((err) => {
       console.error("Navigation error:", err);
@@ -56,6 +54,9 @@ const isMediaQueryMatched = ref(mediaQuery.matches);
 
 // 스크롤 제스처 감지
 const handleScroll = (event) => {
+  if (currentPageIndex.value === -1) {
+    return; // 스크롤 네비게이션 비활성화
+  }
   if (event.deltaY > 0) {
     goNext(); // 아래로 스크롤 시 다음 페이지
   } else if (event.deltaY < 0) {
