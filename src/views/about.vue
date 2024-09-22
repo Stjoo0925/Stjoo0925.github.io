@@ -79,46 +79,44 @@
 
 <script setup>
 import { onMounted, nextTick } from "vue";
+import "@/assets/js/tagcanvas.js";
 
 const githubId = "Stjoo0925";
 
 let timeoutId = null;
 
 onMounted(async () => {
-  await nextTick(); // DOM 업데이트가 완료될 때까지 대기
+  await nextTick();
 
-  // CSS 변수에서 폰트 색상을 가져옴
   const rootStyles = getComputedStyle(document.documentElement);
-  const fontColor = rootStyles.getPropertyValue("--font-color2").trim(); // --font-color 값 가져오기
+  const fontColor = rootStyles.getPropertyValue("--font-color2").trim();
 
   try {
     TagCanvas.Start("myCanvas", "tags", {
       textColour: fontColor,
       outlineColour: null,
-      reverse: true, // 텍스트 회전 방향
-      depth: 0.8, // 3D 깊이
-      maxSpeed: 0.05, // 최대 속도
-      textHeight: 18, // 텍스트 크기 설정
-      textFont: "goorm-sans-bold", // 글꼴 설정
-      wheelZoom: false, // 마우스 휠로 줌 비활성화
-      initial: [0.1, -0.1], // 단어들이 자동으로 움직이도록 설정 (x, y 회전 속도)
+      reverse: true,
+      depth: 0.8,
+      maxSpeed: 0.05,
+      textHeight: 18,
+      textFont: "goorm-sans-bold",
+      wheelZoom: false,
+      initial: [0.1, -0.1],
     });
 
     const canvas = document.getElementById("myCanvas");
 
-    // 마우스가 캔버스에 들어오면 회전 멈춤
     canvas.addEventListener("mouseenter", () => {
-      TagCanvas.SetSpeed("myCanvas", [0, 0]); // 회전 멈춤
+      TagCanvas.SetSpeed("myCanvas", [0, 0]);
       if (timeoutId) {
-        clearTimeout(timeoutId); // 이전 타이머 취소
+        clearTimeout(timeoutId);
       }
     });
 
-    // 마우스가 캔버스를 떠나면 일정 시간 후에 회전 재개
     canvas.addEventListener("mouseleave", () => {
       timeoutId = setTimeout(() => {
-        TagCanvas.SetSpeed("myCanvas", [0.1, -0.1]); // 회전 재개
-      }, 1000); // 2초 후에 다시 회전 시작
+        TagCanvas.SetSpeed("myCanvas", [0.1, -0.1]);
+      }, 1000);
     });
   } catch (e) {
     console.log("TagCanvas error: ", e);
