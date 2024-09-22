@@ -145,6 +145,9 @@ a {
 
 /* 모바일 화면일 때 햄버거 메뉴 적용 */
 @media (max-width: 768px) {
+  .header-title {
+    font-size: 18px;
+  }
   .nav-menu {
     position: absolute;
     top: 0; /* top을 0으로 변경 */
