@@ -84,22 +84,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-import LoadingSpinner from "@/components/loadingSpinner.vue";
+import { onMounted } from "vue";
 
 const githubId = "Stjoo0925";
-
-const isLoading = ref(true);
 
 let timeoutId = null;
 
 onMounted(() => {
-  setTimeout(() => {
-    if (isLoading.value) {
-      isLoading.value = false;
-    }
-  }, 1200);
-
   // CSS 변수에서 폰트 색상을 가져옴
   const rootStyles = getComputedStyle(document.documentElement);
   const fontColor = rootStyles.getPropertyValue("--font-color2").trim(); // --font-color 값 가져오기
