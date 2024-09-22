@@ -67,15 +67,9 @@
       <!-- GitHub 잔디 그래프 추가 -->
       <div class="github-contributions animate__animated animate__fadeInUp">
         <div class="contributions-container">
-          <!-- 로딩 스피너 표시 -->
-          <LoadingSpinner v-if="isLoading" />
-          <!-- 실제 GitHub 잔디 그래프 이미지 -->
           <img
-            v-else
             :src="`https://ghchart.rshah.org/0d0d0d/${githubId}?${Date.now()}`"
             alt="GitHub Contributions Graph"
-            @load="onImageLoad"
-            @error="onImageError"
           />
         </div>
       </div>
