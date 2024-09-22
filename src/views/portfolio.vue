@@ -91,7 +91,6 @@ const navigateTo = (path) => {
   overflow: hidden;
   padding: 40px;
   box-sizing: border-box;
-  max-height: 100vh;
   background-color: var(--main-bg-color);
 }
 
@@ -228,6 +227,7 @@ const navigateTo = (path) => {
     flex-direction: column;
     gap: 15px;
     align-items: center;
+    justify-content: flex-start;
   }
 
   .portfolio-card {

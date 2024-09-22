@@ -45,7 +45,7 @@ const hoverIcon = (icon) => {
     </div>
 
     <!-- 카드 형식 연락처 -->
-    <div class="contact-card animate__animated animate__backInUp">
+    <div class="contact-card animate__animated animate__fadeIn">
       <div class="card-body">
         <div class="card-contents">
           <h5 class="card-title">{{ contactInfo.name }}</h5>
@@ -58,7 +58,7 @@ const hoverIcon = (icon) => {
         </div>
 
         <!-- 소셜 아이콘 -->
-        <div class="social-icons animate__animated animate__backInUp">
+        <div class="social-icons animate__animated animate__fadeIn">
           <a
             :href="contactInfo.socialLinks.gmail"
             target="_blank"

@@ -9,7 +9,7 @@
     <div class="about-content">
       <div class="about-profile">
         <div class="profile-section">
-          <div class="personal-info animate__animated animate__fadeInUp">
+          <div class="personal-info animate__animated animate__backInUp">
             <div class="about-title">About Me</div>
             <br />
             <ul class="about-list">
@@ -20,7 +20,7 @@
               </li>
             </ul>
           </div>
-          <div class="education-info animate__animated animate__fadeInUp">
+          <div class="education-info animate__animated animate__backInUp">
             <div class="about-title">Education</div>
             <br />
             <ul class="about-list">
@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        <div class="profile-section animate__animated animate__fadeInUp">
+        <div class="profile-section animate__animated animate__backInUp">
           <div class="characters">
             <div class="about-title">Characters</div>
             <br />
@@ -54,7 +54,7 @@
               </div>
             </div>
           </div>
-          <div class="contributions animate__animated animate__fadeInUp">
+          <div class="contributions animate__animated animate__backInUp">
             <div class="about-title">Contributions</div>
             <img
               class="github-stats"
@@ -65,7 +65,7 @@
         </div>
       </div>
       <!-- GitHub 잔디 그래프 추가 -->
-      <div class="github-contributions animate__animated animate__fadeInUp">
+      <div class="github-contributions animate__animated animate__backInUp">
         <div class="contributions-container">
           <img
             :src="`https://ghchart.rshah.org/0d0d0d/${githubId}?${Date.now()}`"
@@ -78,18 +78,19 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, nextTick } from "vue";
 
 const githubId = "Stjoo0925";
 
 let timeoutId = null;
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick(); // DOM 업데이트가 완료될 때까지 대기
+
   // CSS 변수에서 폰트 색상을 가져옴
   const rootStyles = getComputedStyle(document.documentElement);
   const fontColor = rootStyles.getPropertyValue("--font-color2").trim(); // --font-color 값 가져오기
 
-  // TagCanvas 초기화
   try {
     TagCanvas.Start("myCanvas", "tags", {
       textColour: fontColor,
@@ -239,7 +240,7 @@ a {
 .contributions-container {
   flex: 1;
   width: 100%;
-  height: auto;
+  height: 160px;
   background-color: var(--contribution-bg-color);
   border-radius: 8px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
