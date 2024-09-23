@@ -44,12 +44,12 @@
               <canvas id="myCanvas"></canvas>
               <div id="tags">
                 <ul>
-                  <li><a href="#">논리적인</a></li>
-                  <li><a href="#">문제해결능력</a></li>
-                  <li><a href="#">팀워크</a></li>
-                  <li><a href="#">분석적인</a></li>
-                  <li><a href="#">효율적인</a></li>
-                  <li><a href="#">책임감</a></li>
+                  <li class="canvas-contents"><a href="#">논리적인</a></li>
+                  <li class="canvas-contents"><a href="#">문제해결능력</a></li>
+                  <li class="canvas-contents"><a href="#">팀워크</a></li>
+                  <li class="canvas-contents"><a href="#">분석적인</a></li>
+                  <li class="canvas-contents"><a href="#">효율적인</a></li>
+                  <li class="canvas-contents"><a href="#">책임감</a></li>
                 </ul>
               </div>
             </div>
@@ -225,6 +225,10 @@ a {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+.canvas-contents {
+  display: none;
 }
 
 .github-contributions {
