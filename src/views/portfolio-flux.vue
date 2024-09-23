@@ -300,4 +300,17 @@ const goBack = () => {
 .bi {
   margin: 0 !important;
 }
+
+@media screen and (max-width: 768px) {
+  .image-gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  }
+
+  .project-tech-stack img {
+    width: 100%;
+  }
+}
 </style>
