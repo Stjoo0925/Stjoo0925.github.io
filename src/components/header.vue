@@ -38,7 +38,7 @@ onUnmounted(() => {
     <RouterLink to="/">
       <div class="logo">
         <i class="bi bi-lightning-charge-fill header-img"></i>
-        <div class="header-title">JooSoonTae | Portfolio</div>
+        <div class="header-title">JooSoonTae / Portfolio</div>
       </div>
     </RouterLink>
 
