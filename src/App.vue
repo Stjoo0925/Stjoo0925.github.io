@@ -1,4 +1,5 @@
 <script setup>
+import Indicator from './components/indicator.vue';
 import Header from "./components/header.vue";
 import Section from "./components/section.vue";
 import Footer from "./components/footer.vue";
@@ -9,6 +10,7 @@ import Footer from "./components/footer.vue";
     <div class="app-header">
       <Header />
     </div>
+    <Indicator />
     <div class="app-section">
       <Section />
     </div>
@@ -25,6 +27,7 @@ import Footer from "./components/footer.vue";
   height: 100vh;
   width: 100%;
   overflow: hidden;
+  background-color: var(--main-bg-color);
 }
 
 .app-header {

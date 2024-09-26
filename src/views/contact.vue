@@ -8,7 +8,8 @@ import Discord from "@/assets/images/Discord.svg";
 
 // 연락처 정보와 소셜 링크
 const contactInfo = {
-  name: "주순태",
+  img: "https://avatars.githubusercontent.com/u/166350549?v=4",
+  name: "주순태 | stjoo0925",
   email: "stjoo0925@gmail.com",
   phone: "010-3494-3809",
   socialLinks: {
@@ -48,6 +49,7 @@ const hoverIcon = (icon) => {
     <div class="contact-card animate__animated animate__fadeIn">
       <div class="card-body">
         <div class="card-contents">
+          <img :src="contactInfo.img" alt="GIthub Profile Image">
           <h5 class="card-title">{{ contactInfo.name }}</h5>
           <p class="card-text">
             {{ contactInfo.email }}
@@ -202,7 +204,7 @@ a {
 /* 카드 내용 */
 .card-contents {
   width: 100%;
-  height: 200px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -213,6 +215,14 @@ a {
   border: 3px solid var(--secondary-highlight-color);
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
+}
+
+.card-contents img {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid var(--secondary-highlight-color);
 }
 
 .card-title {
