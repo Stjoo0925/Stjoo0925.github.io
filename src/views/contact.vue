@@ -49,7 +49,7 @@ const hoverIcon = (icon) => {
     <div class="contact-card animate__animated animate__fadeIn">
       <div class="card-body">
         <div class="card-contents">
-          <img :src="contactInfo.img" alt="GIthub Profile Image">
+          <img :src="contactInfo.img" alt="GIthub Profile Image" />
           <h5 class="card-title">{{ contactInfo.name }}</h5>
           <p class="card-text">
             {{ contactInfo.email }}
@@ -133,7 +133,7 @@ a {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 40px;
+  padding: 50px;
   box-sizing: border-box;
   min-height: 400px;
   max-height: 100vh;

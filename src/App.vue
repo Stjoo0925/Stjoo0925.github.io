@@ -1,5 +1,5 @@
 <script setup>
-import Indicator from "./components/indicator.vue";
+import AppIndicator from "./components/appIndicator.vue";
 import Header from "./components/header.vue";
 import Section from "./components/section.vue";
 import Footer from "./components/footer.vue";
@@ -13,7 +13,7 @@ import Footer from "./components/footer.vue";
     <div class="app-section">
       <Section />
     </div>
-    <Indicator />
+    <AppIndicator class="app-indicator" />
     <div class="app-footer">
       <Footer />
     </div>
@@ -40,6 +40,15 @@ import Footer from "./components/footer.vue";
   height: 87vh; /* 섹션의 높이를 명확하게 지정 */
   width: 100%;
   overflow: hidden;
+  z-index: 1; /* 섹션의 z-index 설정 */
+}
+
+.app-indicator {
+  position: absolute;
+  bottom: 5vh;
+  left: 0;
+  z-index: 2; /* 인디케이터의 z-index를 섹션보다 높게 설정 */
+  width: 100%;
 }
 
 .app-footer {

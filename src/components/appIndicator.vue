@@ -4,7 +4,7 @@
     <button class="nav-button" @click="goToPrevious" :disabled="!hasPrevious">
       <img :src="Back" alt="Previous" />
     </button>
-    
+
     <div class="indicator">
       <span
         v-for="(route, index) in routes"
@@ -21,15 +21,15 @@
 
 <script setup>
 import { computed } from "vue";
-import { useRoute, useRouter } from 'vue-router';
-import About from '@/views/about.vue';
-import TechSkills from '@/views/techSkills.vue';
-import Portfolio from '@/views/portfolio.vue';
-import Contact from '@/views/contact.vue';
+import { useRoute, useRouter } from "vue-router";
+import About from "@/views/about.vue";
+import TechSkills from "@/views/techSkills.vue";
+import Portfolio from "@/views/portfolio.vue";
+import Contact from "@/views/contact.vue";
 
 // SVG 파일을 임포트
-import Forward from '@/assets/images/forward.svg';
-import Back from '@/assets/images/back.svg';
+import Forward from "@/assets/images/forward.svg";
+import Back from "@/assets/images/back.svg";
 
 // 현재 라우트 경로 가져오기
 const route = useRoute();
@@ -47,7 +47,9 @@ const routes = [
 const isActive = (path) => route.path === path;
 
 // 현재 페이지 인덱스 가져오기
-const currentIndex = computed(() => routes.findIndex(r => r.path === route.path));
+const currentIndex = computed(() =>
+  routes.findIndex((r) => r.path === route.path)
+);
 
 // 이전 페이지로 이동
 const goToPrevious = () => {
@@ -66,7 +68,6 @@ const goToNext = () => {
 // 이전 및 다음 페이지가 있는지 확인
 const hasPrevious = computed(() => currentIndex.value > 0);
 const hasNext = computed(() => currentIndex.value < routes.length - 1);
-
 </script>
 
 <style scoped>
@@ -76,11 +77,11 @@ const hasNext = computed(() => currentIndex.value < routes.length - 1);
   align-items: center;
   gap: 20px;
   background-color: var(--main-bg-color);
-  padding: 10px;
+  padding: 5px;
 }
 
 .indicator {
-  height: 60px;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,7 +118,11 @@ const hasNext = computed(() => currentIndex.value < routes.length - 1);
 
 .nav-button:disabled {
   background-color: var(--main-bg-color);
-  cursor: not-allowed;
+}
+
+.nav-button:disabled img {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(0%) saturate(1758%)
+    hue-rotate(231deg) brightness(96%) contrast(85%); /* --secondary-bg-color: #2e2e2e; /* 중간 톤의 그레이 블랙, 보조 배경 */
 }
 
 .nav-button:not(:disabled):hover {

@@ -89,7 +89,7 @@ const navigateTo = (path) => {
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  padding: 40px;
+  padding: 50px;
   box-sizing: border-box;
   background-color: var(--main-bg-color);
 }

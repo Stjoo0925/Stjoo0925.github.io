@@ -137,7 +137,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 40px;
+  padding: 50px;
   box-sizing: border-box;
   background-color: var(--main-bg-color);
 }
