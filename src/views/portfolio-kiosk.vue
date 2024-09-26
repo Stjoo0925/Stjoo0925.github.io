@@ -114,7 +114,7 @@ const goBack = () => {
 
     <!-- 뒤로가기 버튼 -->
     <button class="back-button" @click="goBack">
-      <i class="bi bi-arrow-return-left"></i>
+      <i class="bi bi-x-lg"></i>
     </button>
   </div>
 </template>
@@ -254,7 +254,7 @@ const goBack = () => {
 .back-button {
   position: fixed;
   top: 15%;
-  right: 40px;
+  right: 15%;
   transform: translateY(-50%);
   padding: 10px 15px;
   background-color: var(--secondary-highlight-color);
@@ -280,10 +280,14 @@ const goBack = () => {
 
 @media screen and (max-width: 768px) {
   .image-gallery {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .back-button {
+    right: 5%;
   }
 }
 </style>

@@ -1,6 +1,5 @@
-<!-- Indicator.vue -->
 <template>
-  <div class="indicator-wrapper">
+  <div v-if="showIndicator" class="indicator-wrapper">
     <button class="nav-button" @click="goToPrevious" :disabled="!hasPrevious">
       <img :src="Back" alt="Previous" />
     </button>
@@ -51,6 +50,9 @@ const currentIndex = computed(() =>
   routes.findIndex((r) => r.path === route.path)
 );
 
+// 인디케이터 표시 여부 결정
+const showIndicator = computed(() => currentIndex.value !== -1);
+
 // 이전 페이지로 이동
 const goToPrevious = () => {
   if (currentIndex.value > 0) {
@@ -63,7 +65,7 @@ const goToNext = () => {
   if (currentIndex.value < routes.length - 1) {
     router.push(routes[currentIndex.value + 1].path);
   }
-}; // 닫는 중괄호 추가
+};
 
 // 이전 및 다음 페이지가 있는지 확인
 const hasPrevious = computed(() => currentIndex.value > 0);
@@ -122,7 +124,7 @@ const hasNext = computed(() => currentIndex.value < routes.length - 1);
 
 .nav-button:disabled img {
   filter: brightness(0) saturate(100%) invert(13%) sepia(0%) saturate(1758%)
-    hue-rotate(231deg) brightness(96%) contrast(85%); /* --secondary-bg-color: #2e2e2e; /* 중간 톤의 그레이 블랙, 보조 배경 */
+    hue-rotate(231deg) brightness(96%) contrast(85%); /* --secondary-bg-color: #2e2e2e; 중간 톤의 그레이 블랙, 보조 배경 */
 }
 
 .nav-button:not(:disabled):hover {

@@ -252,7 +252,6 @@ a {
   background-color: var(--secondary-bg-color);
   border: 3px solid var(--secondary-highlight-color);
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
 }
 
 .social-icon {
