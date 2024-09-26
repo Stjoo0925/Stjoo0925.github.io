@@ -1,5 +1,5 @@
 <script setup>
-import Indicator from './components/indicator.vue';
+import Indicator from "./components/indicator.vue";
 import Header from "./components/header.vue";
 import Section from "./components/section.vue";
 import Footer from "./components/footer.vue";
@@ -10,10 +10,10 @@ import Footer from "./components/footer.vue";
     <div class="app-header">
       <Header />
     </div>
-    <Indicator />
     <div class="app-section">
       <Section />
     </div>
+    <Indicator />
     <div class="app-footer">
       <Footer />
     </div>
