@@ -59,16 +59,14 @@ const goBack = () => {
         해결부터 새로운 아이디어까지 다양한 주제로 소통할 수 있습니다.<br />
         커뮤니티의 도움을 받아 식물의 문제를 해결하거나 새로운 원예 트렌드를
         발견할 수 있습니다.<br /><br />
-        3. 맞춤형 원예 조언 제공<br />
-        Leafresh는 사용자의 식물 종류와 지역 기후에 따라 맞춤형 원예 조언을
-        제공합니다.<br />
-        이를 통해 각 식물의 최적 성장 조건을 이해하고, 더 건강한 식물을 키울 수
-        있습니다.<br />
-        또한, 특정 상황에 맞는 알림과 팁을 제공해 원예 초보자들도 쉽게 따라할 수
-        있습니다.<br /><br />
+        3. 실시간 채팅을 통한 식물분양<br />
+        Leafresh는 실시간 채팅 기능을 통해 식물 애호가들이 직접 식물을 분양하고 교환할 수 있는 플랫폼을 제공합니다. <br />
+        사용자는 자신이 키우는 식물을 다른 사용자에게 분양하거나 새로운 식물을 얻을 수 있으며,<br />
+        실시간으로 소통하면서 분양 조건과 정보를 공유할 수 있습니다. <br />
+        이를 통해 더욱 쉽게 다양한 식물을 접하고, 원예 생활을 확장할 수 있습니다.<br /><br />
         Leafresh는 단순한 원예 도구를 넘어, 당신의 원예 생활을 더 즐겁고
         성공적으로 만들어 줄 완벽한 동반자입니다.<br /><br />
-        목표기간 : 2024.08.23 ~ 09.30
+        목표기간 : 2024.08.23 ~ 10.02
       </p>
     </section>
 
@@ -78,6 +76,7 @@ const goBack = () => {
       <ul class="contributions-list">
         <li>Github Organizations구축 및 프로젝트 위키 작성</li>
         <li>프로젝트 설계 및 CI/CD 파이프라인 구축</li>
+        <li>백엔드 DNS설정 및 SSL인증서 적용</li>
         <li>백엔드 API 개발 및 REST 설계</li>
         <li>프론트엔드 페이지 디자인 및 상태 관리 구현</li>
       </ul>
@@ -86,34 +85,26 @@ const goBack = () => {
     <!-- 주요 기능 영역 -->
     <section class="project-features">
       <h2 class="section-title">주요 기능</h2>
-      <p class="section-description">-사용자페이지-</p>
       <ul class="feature-list">
         <li>상품판매 및 등록기능</li>
         <li>상품 상세보기 기능</li>
-        <li>소셜 로그인 기능</li>
+        <li>로그인 기능</li>
         <li>아티클 상세보기 기능</li>
         <li>랭킹 기능</li>
         <li>마이페이지 기능</li>
-      </ul>
-      <p class="section-description">-관리자페이지-</p>
-      <ul class="feature-list">
-        <li>회원 목록 조회 기능</li>
-        <li>회원 권한 조정 기능</li>
-        <li>공지사항 등록 기능</li>
-        <li>아티클 등록 기능</li>
       </ul>
     </section>
 
     <!-- 아키텍쳐 영역 -->
     <section class="project-tech-stack">
       <h2 class="section-title">아키텍쳐</h2>
-      <img src="@/assets/images/flux-project/flux-stack.png" />
+      <img src="@/assets/images/leafresh-project/leafresh-architecture.png" />
     </section>
 
     <!-- 사용 기술 영역 -->
     <section class="project-tech-stack">
       <h2 class="section-title">사용 기술</h2>
-      <img src="@/assets/images/flux-project/flux-stack.png" />
+      <img src="@/assets/images/leafresh-project/leafresh-stack.png" />
     </section>
 
     <!-- 프로젝트 이미지 영역 -->
@@ -184,7 +175,7 @@ const goBack = () => {
 }
 
 .title-line {
-  width: 100px;
+  width: 350px;
   height: 2px;
   background-color: var(--font-color);
   border: none;
@@ -246,6 +237,12 @@ const goBack = () => {
 .contributions-list {
   list-style-type: disc;
   padding-left: 20px;
+}
+
+.project-tech-stack img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .feature-list li,

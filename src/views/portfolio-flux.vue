@@ -165,7 +165,7 @@ const goBack = () => {
 }
 
 .title-line {
-  width: 100px;
+  width: 250px;
   height: 2px;
   background-color: var(--font-color);
   border: none;
