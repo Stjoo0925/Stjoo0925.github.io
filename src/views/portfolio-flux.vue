@@ -223,6 +223,12 @@ const goBack = () => {
   padding-left: 20px;
 }
 
+.project-tech-stack img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 .feature-list li,
 .tech-stack-list li,
 .contributions-list li {
