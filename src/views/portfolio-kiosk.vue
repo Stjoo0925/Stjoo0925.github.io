@@ -1,11 +1,17 @@
 <script setup>
+import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
+const isMounted = ref(false);
 
 const goBack = () => {
   router.back();
 };
+
+onMounted(() => {
+  isMounted.value = true;
+});
 </script>
 
 <template>
@@ -113,7 +119,7 @@ const goBack = () => {
     </section>
 
     <!-- 뒤로가기 버튼 -->
-    <button class="back-button" @click="goBack">
+    <button v-if="isMounted" class="back-button" @click="goBack">
       <i class="bi bi-x-lg"></i>
     </button>
   </div>
@@ -121,6 +127,7 @@ const goBack = () => {
 
 <style scoped>
 .kiosk-project-container {
+  position: relative; /* 추가 */
   height: 100%;
   padding: 20px;
   max-width: 1200px;
@@ -252,17 +259,18 @@ const goBack = () => {
 
 /* 뒤로가기 버튼 스타일 */
 .back-button {
-  position: fixed;
-  top: 15%;
-  right: 15%;
-  transform: translateY(-50%);
+  position: absolute;
+  top: 20px;
+  right: 20px;
   padding: 10px 15px;
   background-color: var(--secondary-highlight-color);
   color: var(--font-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 1000; /* 다른 요소 위에 표시되도록 설정 */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
 }
 
 .back-button i {
@@ -287,7 +295,8 @@ const goBack = () => {
   }
 
   .back-button {
-    right: 5%;
+    right: 2%;
+    opacity: 0.5;
   }
 }
 </style>
