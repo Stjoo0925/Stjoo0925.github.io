@@ -85,12 +85,6 @@ const goBack = () => {
       </ul>
     </section>
 
-    <!-- 아키텍쳐 영역 -->
-    <section class="project-tech-stack">
-      <h2 class="section-title">아키텍쳐</h2>
-      <img src="@/assets/images/flux-project/flux-stack.png" />
-    </section>
-
     <!-- 사용 기술 영역 -->
     <section class="project-tech-stack">
       <h2 class="section-title">사용 기술</h2>

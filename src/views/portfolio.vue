@@ -11,7 +11,7 @@ const navigateTo = (path) => {
     <div class="title-container">
       <div class="title">포트폴리오</div>
       <hr class="title-line" />
-      <div class="scription">작업한 프로젝트 현황입니다</div>
+      <div class="scription">작업한 프로젝트 현황</div>
     </div>
     <div class="portfolio-grid animate__animated animate__fadeInUp">
       <!-- 첫 번째 프로젝트 카드 -->
@@ -48,7 +48,7 @@ const navigateTo = (path) => {
           class="portfolio-image"
         />
         <div class="portfolio-info">
-          <h5>Flux project</h5>
+          <h5>Flux Project</h5>
           <p>
             스프링프레임워크와 뷰프레임워크를 이용한 전자상거래 플랫폼 프로젝트
           </p>
@@ -69,7 +69,7 @@ const navigateTo = (path) => {
           class="portfolio-image"
         />
         <div class="portfolio-info">
-          <h5>Leafresh project</h5>
+          <h5>Leafresh Project</h5>
           <p>
             스프링프레임워크와 뷰프레임워크를 이용한 SNS 스타일의 원예일지
             플랫폼 프로젝트
