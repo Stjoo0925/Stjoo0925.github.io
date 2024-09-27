@@ -248,7 +248,6 @@ p {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--font-color2);
-  margin-bottom: 10px;
 }
 
 .tech-card p {
