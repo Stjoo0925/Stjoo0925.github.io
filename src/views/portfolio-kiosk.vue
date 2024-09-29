@@ -1,21 +1,47 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
 const isMounted = ref(false);
+const isScrollTopVisible = ref(false);
+const containerRef = ref(null); // 컨테이너 참조
 
 const goBack = () => {
   router.back();
 };
 
+const scrollToTop = () => {
+  if (containerRef.value) {
+    containerRef.value.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+};
+
+const handleScroll = () => {
+  if (containerRef.value) {
+    isScrollTopVisible.value = containerRef.value.scrollTop > 100;
+  }
+};
+
 onMounted(() => {
   isMounted.value = true;
+  if (containerRef.value) {
+    containerRef.value.addEventListener("scroll", handleScroll);
+  }
+});
+
+onUnmounted(() => {
+  if (containerRef.value) {
+    containerRef.value.removeEventListener("scroll", handleScroll);
+  }
 });
 </script>
 
 <template>
-  <div class="kiosk-project-container kiosk-project-container-scrollable">
+  <div ref="containerRef" class="kiosk-project-container kiosk-project-container-scrollable">
     <!-- 제목 영역 -->
     <div class="title-container">
       <h1 class="project-title">키오스크 프로젝트</h1>
@@ -121,6 +147,15 @@ onMounted(() => {
     <!-- 뒤로가기 버튼 -->
     <button v-if="isMounted" class="back-button" @click="goBack">
       <i class="bi bi-x-lg"></i>
+    </button>
+
+    <!-- 페이지 상단 이동 버튼 -->
+    <button
+      v-show="isScrollTopVisible"
+      class="scroll-top-button"
+      @click="scrollToTop"
+    >
+      <i class="bi bi-arrow-up"></i>
     </button>
   </div>
 </template>
@@ -284,6 +319,39 @@ onMounted(() => {
 
 .bi {
   margin: 0 !important;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.scroll-top-button {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: var(--secondary-highlight-color);
+  color: var(--font-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  animation: blink 2s infinite; /* 깜박이는 애니메이션 추가 */
+}
+
+.scroll-top-button:hover {
+  opacity: 1;
+  background-color: var(--secondary-bg-color);
+}
+
+.scroll-top-button i {
+  font-size: 1.2rem;
 }
 
 @media screen and (max-width: 768px) {

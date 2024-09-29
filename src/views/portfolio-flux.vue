@@ -22,7 +22,7 @@ const scrollToTop = () => {
 
 const handleScroll = () => {
   if (containerRef.value) {
-    isScrollTopVisible.value = containerRef.value.scrollTop > 200;
+    isScrollTopVisible.value = containerRef.value.scrollTop > 100;
   }
 };
 
@@ -39,8 +39,6 @@ onUnmounted(() => {
   }
 });
 </script>
-
-
 
 <template>
   <div ref="containerRef" class="flux-project-container flux-project-container-scrollable">
@@ -159,7 +157,8 @@ onUnmounted(() => {
     </button>
 
     <!-- 페이지 상단 이동 버튼 -->
-   <button
+    <button
+      v-show="isScrollTopVisible"
       class="scroll-top-button"
       @click="scrollToTop"
     >
@@ -337,22 +336,28 @@ onUnmounted(() => {
   margin: 0 !important;
 }
 
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 .scroll-top-button {
   position: fixed;
-  bottom: 20px;
+  bottom: 60px;
   right: 20px;
   padding: 10px 15px;
   background-color: var(--secondary-highlight-color);
   color: var(--font-color);
   border: none;
-  border-radius: 50%;
+  border-radius: 10px;
   cursor: pointer;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.8;
+  opacity: 1;
   transition: opacity 0.3s ease;
+  animation: blink 2s infinite; /* 깜박이는 애니메이션 추가 */
 }
 
 .scroll-top-button:hover {
