@@ -83,7 +83,7 @@ const hasNext = computed(() => currentIndex.value < routes.length - 1);
 }
 
 .indicator {
-  height: 20px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

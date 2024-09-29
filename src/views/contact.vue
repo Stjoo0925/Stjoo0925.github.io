@@ -242,7 +242,7 @@ a {
 /* 소셜 아이콘 */
 .social-icons {
   width: 100%;
-  height: 200px;
+  height: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -273,6 +273,7 @@ a {
   font-size: 14px;
   font-weight: 700;
   margin-top: 5px;
+  margin-bottom: 0 !important;
   text-align: center;
   transition: transform 0.3s;
 }

@@ -13,7 +13,9 @@ import Footer from "./components/footer.vue";
     <div class="app-section">
       <Section />
     </div>
-    <AppIndicator />
+    <div class="app-indicator">
+      <AppIndicator />
+    </div>
     <div class="app-footer">
       <Footer />
     </div>
@@ -42,6 +44,12 @@ import Footer from "./components/footer.vue";
   width: 100%;
   overflow: hidden;
   z-index: 1;
+}
+
+.app-indicator {
+  height: 5vh; /* 푸터의 높이를 지정 */
+  width: 100%;
+  flex-shrink: 0; /* 고정된 높이를 유지 */
 }
 
 .app-footer {
