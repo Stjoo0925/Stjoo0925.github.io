@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import About from "@/views/about.vue";
-import TechSkills from "@/views/techSkills.vue";
-import Portfolio from "@/views/portfolio.vue";
-import Contact from "@/views/contact.vue";
-import Kiosk from "@/views/portfolio-kiosk.vue";
-import Flux from "@/views/portfolio-flux.vue";
-import Leafresh from "@/views/portfolio-leafresh.vue";
+
+const About = () => import(/* webpackPrefetch: true */ "@/views/about.vue");
+const TechSkills = () => import(/* webpackPrefetch: true */ "@/views/techSkills.vue");
+const Portfolio = () => import(/* webpackPrefetch: true */ "@/views/portfolio.vue");
+const Contact = () => import(/* webpackPrefetch: true */ "@/views/contact.vue");
+const Kiosk = () => import(/* webpackPrefetch: true */ "@/views/portfolio-kiosk.vue");
+const Flux = () => import(/* webpackPrefetch: true */ "@/views/portfolio-flux.vue");
+const Leafresh = () => import(/* webpackPrefetch: true */ "@/views/portfolio-leafresh.vue");
 
 const routes = [
   { path: "/", component: About, meta: { transition: "fade" } },
