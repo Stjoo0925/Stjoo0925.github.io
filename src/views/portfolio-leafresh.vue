@@ -51,6 +51,16 @@ onUnmounted(() => {
       </p>
     </div>
 
+    <!-- 뱃지 영역 -->
+    <div class="badge-container">
+      <!-- 첫 번째 뱃지 -->
+      <img src="https://img.shields.io/badge/SpringBoot-v3.3.3-%236DB33F?style=flat&logo=spring-boot&logoColor=white" alt="SpringBoot Badge" />
+      <!-- 두 번째 뱃지 -->
+      <img src="https://img.shields.io/badge/Vue.js-v3.4.29-4FC08D?style=flat&logo=vue.js&logoColor=white" alt="Vue.js Badge" />
+      <!-- 세 번째 뱃지 -->
+      <img src="https://img.shields.io/badge/Flutter-v3.24.1-02569B?style=flat&logo=flutter&logoColor=white" alt="Flutter Badge" />
+    </div>
+
     <!-- 아이콘 링크 영역 -->
     <div class="project-links">
       <a
@@ -58,7 +68,7 @@ onUnmounted(() => {
         target="_blank"
         aria-label="GitHub"
       >
-        <img src="@/assets/images/github.svg" alt="GitHub Logo" class="logo" />
+        <img src="@/assets/images/project-github.svg" alt="GitHub Logo" class="logo" />
       </a>
       <a
         href="https://leafresh-frontend-nine.vercel.app/community"
@@ -66,7 +76,7 @@ onUnmounted(() => {
         aria-label="Live Site"
       >
         <img
-          src="@/assets/images/vercel.svg"
+          src="@/assets/images/deployed-vercel.svg"
           alt="Live Site Logo"
           class="logo"
         />
@@ -235,6 +245,20 @@ onUnmounted(() => {
   margin-bottom: 40px;
 }
 
+.badge-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.badge-container img {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 /* 섹션 타이틀 스타일 */
 .section-title {
   font-size: 1.8rem;
@@ -252,6 +276,8 @@ onUnmounted(() => {
 
 /* 프로젝트 링크 영역 스타일 */
 .project-links {
+  display: flex;
+  flex-direction: row;
   margin-top: 10px;
   margin-bottom: 30px;
 }
@@ -264,10 +290,9 @@ onUnmounted(() => {
 }
 
 .logo {
-  width: 32px;
-  height: 32px;
+  width: 100%;
+  height: 50px;
   vertical-align: middle;
-  filter: invert(1);
 }
 
 /* 주요 기능 및 사용 기술 섹션 스타일 */

@@ -49,6 +49,12 @@ onUnmounted(() => {
       <p class="project-subtitle">Vue.js를 활용한 햄버거 키오스크</p>
     </div>
 
+    <!-- 뱃지 영역 -->
+    <div class="badge-container">
+      <!-- 첫 번째 뱃지 -->
+      <img src="https://img.shields.io/badge/Vue.js-v3.4.21-4FC08D?style=flat&logo=vue.js&logoColor=white" alt="Vue.js Badge" />
+    </div>
+
     <!-- 아이콘 링크 영역 -->
     <div class="project-links">
       <a
@@ -56,14 +62,14 @@ onUnmounted(() => {
         target="_blank"
         aria-label="GitHub"
       >
-        <img src="@/assets/images/github.svg" alt="Github Logo" class="logo" />
+        <img src="@/assets/images/project-github.svg" alt="Github Logo" class="logo" />
       </a>
       <a
         href="https://burgerkiosk.vercel.app/"
         target="_blank"
         aria-label="Vercel"
       >
-        <img src="@/assets/images/vercel.svg" alt="Vercel Logo" class="logo" />
+        <img src="@/assets/images/deployed-vercel.svg" alt="Vercel Logo" class="logo" />
       </a>
     </div>
 
@@ -207,6 +213,21 @@ onUnmounted(() => {
   margin-bottom: 40px;
 }
 
+.badge-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.badge-container img {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* 섹션 타이틀 스타일 */
 .section-title {
   font-size: 1.8rem;
   font-family: "goorm-sans-bold";
@@ -222,6 +243,8 @@ onUnmounted(() => {
 }
 
 .project-links {
+  display: flex;
+  flex-direction: row;
   margin-top: 10px;
   margin-bottom: 30px;
 }
@@ -234,10 +257,9 @@ onUnmounted(() => {
 }
 
 .logo {
-  width: 32px;
-  height: 32px;
+  width: 100%;
+  height: 50px;
   vertical-align: middle;
-  filter: invert(1);
 }
 
 .project-features,
