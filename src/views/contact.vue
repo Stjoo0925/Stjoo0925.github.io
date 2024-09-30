@@ -13,7 +13,7 @@ const contactInfo = {
   email: "stjoo0925@gmail.com",
   phone: "010-3494-3809",
   socialLinks: {
-    gmail: "mailto:stjoo0925@mail.com",
+    gmail: "mailto:stjoo0925@gmail.com",
     github: "https://github.com/Stjoo0925",
     velog: "https://velog.io/@stjoo0925/posts",
     discord: "https://discord.gg/8zrXwu4Cms",
