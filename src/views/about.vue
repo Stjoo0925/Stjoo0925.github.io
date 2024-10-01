@@ -68,7 +68,7 @@
       <div class="github-contributions animate__animated animate__backInUp">
         <div class="contributions-container">
           <img
-            :src="`https://ghchart.rshah.org/0d0d0d/${githubId}?${Date.now()}`"
+            :src="`https://ghchart.rshah.org/383D40/${githubId}?${Date.now()}`"
             alt="GitHub Contributions Graph"
           />
         </div>

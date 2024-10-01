@@ -127,20 +127,20 @@ a {
 .nav-menu li a {
   font-family: "goorm-sans-bold";
   text-decoration: none;
-  color: var(--font-color);
+  color: var(--primary-highlight-color);
   font-size: 18px;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-menu li a:hover {
-  color: var(--primary-highlight-color);
+  color: var(--font-color);
 }
 
 /* 활성화된 링크에 적용될 스타일 */
 .nav-menu li a.router-link-active {
-  color: var(--primary-highlight-color);
-  border-bottom: 2px solid var(--primary-highlight-color);
+  color: var(--font-color);
+  border-bottom: 2px solid var(--font-color);
 }
 
 /* 모바일 화면일 때 햄버거 메뉴 적용 */

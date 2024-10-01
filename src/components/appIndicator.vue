@@ -93,13 +93,13 @@ const hasNext = computed(() => currentIndex.value < routes.length - 1);
 .indicator-dot {
   width: 10px;
   height: 10px;
-  background-color: var(--secondary-highlight-color);
+  background-color: var(--font-color);
   border-radius: 50%;
   transition: background-color 0.3s ease;
 }
 
 .indicator-dot.active {
-  background-color: var(--alert-color); /* 활성화된 페이지의 색상 */
+  background-color: var(--secondary-bg-color); /* 활성화된 페이지의 색상 */
 }
 
 .nav-button {
@@ -116,6 +116,7 @@ const hasNext = computed(() => currentIndex.value < routes.length - 1);
 .nav-button img {
   width: 20px;
   height: 20px;
+  filter: invert(100);
 }
 
 .nav-button:disabled {
@@ -123,9 +124,9 @@ const hasNext = computed(() => currentIndex.value < routes.length - 1);
 }
 
 .nav-button:disabled img {
-  filter: brightness(0) saturate(100%) invert(13%) sepia(0%) saturate(1758%)
-    hue-rotate(231deg) brightness(96%) contrast(85%); /* --secondary-bg-color: #2e2e2e; 중간 톤의 그레이 블랙, 보조 배경 */
+  filter: invert(0);
 }
+
 
 .nav-button:not(:disabled):hover {
   background-color: var(--secondary-highlight-color);

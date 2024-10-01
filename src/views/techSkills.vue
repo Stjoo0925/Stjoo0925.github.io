@@ -180,15 +180,21 @@ p {
   font-size: 1.8rem;
   margin-bottom: 5px;
   color: var(--font-color2);
+  text-shadow: 
+    1px 1px 0 black, 
+    -1px 1px 0 black, 
+    1px -1px 0 black, 
+    -1px -1px 0 black;
 }
 
 .title-line {
   width: 100px;
   height: 2px;
-  background-color: var(--font-color2);
+  background-color: black;
   border: none;
   margin: 0 auto;
   margin-bottom: 10px;
+  
 }
 
 .scription {
@@ -196,6 +202,11 @@ p {
   font-size: 0.8rem;
   margin-bottom: 5px;
   color: var(--font-color2);
+  text-shadow: 
+    1px 1px 0 black, 
+    -1px 1px 0 black, 
+    1px -1px 0 black, 
+    -1px -1px 0 black;
 }
 
 .scription2 {
@@ -203,6 +214,11 @@ p {
   font-size: 1rem;
   margin-bottom: 10px;
   color: var(--font-color2);
+  text-shadow: 
+    1px 1px 0 black, 
+    -1px 1px 0 black, 
+    1px -1px 0 black, 
+    -1px -1px 0 black;
 }
 
 .backend-container,

@@ -113,12 +113,17 @@ const navigateTo = (path) => {
   font-family: "goorm-sans-bold";
   font-size: 2rem;
   color: var(--font-color2);
+  text-shadow: 
+    1px 1px 0 black, 
+    -1px 1px 0 black, 
+    1px -1px 0 black, 
+    -1px -1px 0 black;
 }
 
 .title-line {
   width: 100px;
   height: 2px;
-  background-color: var(--font-color2);
+  background-color: black;
   border: none;
   margin: 10px auto;
 }
@@ -127,6 +132,11 @@ const navigateTo = (path) => {
   font-family: "goorm-sans-bold";
   font-size: 1rem;
   color: var(--font-color2);
+  text-shadow: 
+    1px 1px 0 black, 
+    -1px 1px 0 black, 
+    1px -1px 0 black, 
+    -1px -1px 0 black;
 }
 
 /* 포트폴리오 그리드 스타일 */

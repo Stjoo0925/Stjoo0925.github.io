@@ -205,13 +205,13 @@ onUnmounted(() => {
 .project-title {
   font-size: 2.5rem;
   font-family: "goorm-sans-bold";
-  color: var(--font-color);
+  color: var(--font-color3);
 }
 
 .title-line {
   width: 250px;
   height: 2px;
-  background-color: var(--font-color);
+  background-color: var(--font-color3);
   border: none;
   margin: 0 auto;
   margin-bottom: 10px;
@@ -220,7 +220,7 @@ onUnmounted(() => {
 .project-subtitle {
   font-family: "goorm-sans-code";
   font-size: 1.2rem;
-  color: var(--font-color);
+  color: var(--font-color3);
   margin-bottom: 40px;
 }
 
@@ -242,14 +242,14 @@ onUnmounted(() => {
 .section-title {
   font-size: 1.8rem;
   font-family: "goorm-sans-bold";
-  color: var(--font-color);
+  color: var(--font-color3);
   margin-bottom: 15px;
 }
 
 .section-description {
   font-family: "goorm-sans-code";
   font-size: 1rem;
-  color: var(--font-color);
+  color: var(--font-color3);
   line-height: 1.6;
 }
 
@@ -293,7 +293,7 @@ onUnmounted(() => {
 .contributions-list li {
   font-family: "goorm-sans-code";
   font-size: 1rem;
-  color: var(--font-color);
+  color: var(--font-color3);
   margin-bottom: 5px;
 }
 
@@ -328,7 +328,7 @@ onUnmounted(() => {
 .image-item p {
   font-family: "goorm-sans-code";
   font-size: 0.9rem;
-  color: var(--font-color);
+  color: var(--font-color3);
 }
 
 /* 뒤로가기 버튼 스타일 */

@@ -158,24 +158,45 @@ onUnmounted(() => {
       <div class="image-gallery">
         <div class="image-item">
           <img
-            src="@/assets/images/flux-project/flux-main.png"
+            src="@/assets/images/leafresh-project/leafresh-main.png"
             alt="메인 페이지"
           />
           <p>메인 페이지</p>
         </div>
         <div class="image-item">
           <img
-            src="@/assets/images/flux-project/flux-login.png"
+            src="@/assets/images/leafresh-project/leafresh-login.png"
             alt="로그인 페이지"
           />
           <p>로그인 페이지</p>
         </div>
         <div class="image-item">
           <img
-            src="@/assets/images/flux-project/flux-announcement.png"
-            alt="공지사항 페이지"
+            src="@/assets/images/leafresh-project/leafresh-feed.png"
+            alt="피드 페이지"
           />
-          <p>공지사항 페이지</p>
+          <p>피드 페이지</p>
+        </div>
+        <div class="image-item">
+          <img
+            src="@/assets/images/leafresh-project/leafresh-market.png"
+            alt="마켓 페이지"
+          />
+          <p>마켓 페이지</p>
+        </div>
+        <div class="image-item">
+          <img
+            src="@/assets/images/leafresh-project/leafresh-profile.png"
+            alt="프로필 페이지"
+          />
+          <p>프로필 페이지</p>
+        </div>
+        <div class="image-item">
+          <img
+            src="@/assets/images/leafresh-project/leafresh-chat.png"
+            alt="채팅 페이지"
+          />
+          <p>채팅 페이지</p>
         </div>
       </div>
     </section>
@@ -226,13 +247,13 @@ onUnmounted(() => {
 .project-title {
   font-size: 2.5rem;
   font-family: "goorm-sans-bold";
-  color: var(--font-color);
+  color: var(--font-color3);
 }
 
 .title-line {
   width: 350px;
   height: 2px;
-  background-color: var(--font-color);
+  background-color: var(--font-color3);
   border: none;
   margin: 0 auto;
   margin-bottom: 10px;
@@ -241,7 +262,7 @@ onUnmounted(() => {
 .project-subtitle {
   font-family: "goorm-sans-code";
   font-size: 1.2rem;
-  color: var(--font-color);
+  color: var(--font-color3);
   margin-bottom: 40px;
 }
 
@@ -263,14 +284,14 @@ onUnmounted(() => {
 .section-title {
   font-size: 1.8rem;
   font-family: "goorm-sans-bold";
-  color: var(--font-color);
+  color: var(--font-color3);
   margin-bottom: 15px;
 }
 
 .section-description {
   font-family: "goorm-sans-code";
   font-size: 1rem;
-  color: var(--font-color);
+  color: var(--font-color3);
   line-height: 1.6;
 }
 
@@ -320,7 +341,7 @@ onUnmounted(() => {
 .contributions-list li {
   font-family: "goorm-sans-code";
   font-size: 1rem;
-  color: var(--font-color);
+  color: var(--font-color3);
   margin-bottom: 5px;
 }
 
@@ -355,7 +376,7 @@ onUnmounted(() => {
 .image-item p {
   font-family: "goorm-sans-code";
   font-size: 0.9rem;
-  color: var(--font-color);
+  color: var(--font-color3);
 }
 
 /* 뒤로가기 버튼 스타일 */
