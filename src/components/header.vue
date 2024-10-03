@@ -25,7 +25,7 @@ router.beforeEach(() => {
 });
 
 onMounted(() => {
-  document.addEventListener("click", handleClickOutside);
+  document.addEventListener("click", handleClickOutside, { passive: true }); // passive 옵션 추가
 });
 
 onUnmounted(() => {
@@ -51,7 +51,7 @@ onUnmounted(() => {
     <nav class="nav-menu" :class="{ 'is-open': isMenuOpen }">
       <ul>
         <li><router-link to="/" exact>Intro</router-link></li>
-        <li><router-link to="/About" >About</router-link></li>
+        <li><router-link to="/about" >About</router-link></li>
         <li><router-link to="/tech-skills">TechSkills</router-link></li>
         <li><router-link to="/portfolio">Portfolio</router-link></li>
         <li><router-link to="/contact">Contact</router-link></li>
