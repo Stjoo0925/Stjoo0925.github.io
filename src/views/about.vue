@@ -1,10 +1,7 @@
 <template>
   <div class="about-container about-container-scrollable">
     <div class="about-img animate__animated animate__fadeInLeft">
-      <img
-        src="https://data1.pokemonkorea.co.kr/newdata/pokedex/full/000701.png"
-        alt="Profile Image"
-      />
+      <img src="@/assets/images/프로필사진2.jpg" alt="Profile Image" />
     </div>
     <div class="about-content">
       <div class="about-profile">
@@ -160,6 +157,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
 }
 
 .about-img img {
