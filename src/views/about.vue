@@ -1,7 +1,7 @@
 <template>
   <div class="about-container about-container-scrollable">
     <div class="about-img animate__animated animate__fadeInLeft">
-      <img src="@/assets/images/프로필사진2.jpg" alt="Profile Image" />
+      <img src="@/assets/images/profileImg.jpg" alt="Profile Image" />
     </div>
     <div class="about-content">
       <div class="about-profile">
