@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
+const Intro = () => import(/* webpackPrefetch: true */ "@/views/intro.vue");
 const About = () => import(/* webpackPrefetch: true */ "@/views/about.vue");
 const TechSkills = () => import(/* webpackPrefetch: true */ "@/views/techSkills.vue");
 const Portfolio = () => import(/* webpackPrefetch: true */ "@/views/portfolio.vue");
@@ -9,7 +10,8 @@ const Flux = () => import(/* webpackPrefetch: true */ "@/views/portfolio-flux.vu
 const Leafresh = () => import(/* webpackPrefetch: true */ "@/views/portfolio-leafresh.vue");
 
 const routes = [
-  { path: "/", component: About, meta: { transition: "fade" } },
+  { path: "/", component: Intro, meta: { transition: "fade" } },
+  { path: "/about", component: About, meta: { transition: "fade" } },
   { path: "/tech-skills", component: TechSkills, meta: { transition: "fade" } },
   { path: "/portfolio", component: Portfolio, meta: { transition: "fade" } },
   { path: "/portfolio/kiosk", component: Kiosk, meta: { transition: "fade" } },
@@ -20,6 +22,7 @@ const routes = [
 
 const routeOrder = [
   "/", 
+  "/about",
   "/tech-skills", 
   "/portfolio", 
   "/portfolio/kiosk", 

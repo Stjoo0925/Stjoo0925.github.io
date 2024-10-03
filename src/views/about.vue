@@ -1,137 +1,54 @@
-<template>
-  <div class="about-container about-container-scrollable">
-    <div class="about-img animate__animated animate__fadeInLeft">
-      <img src="@/assets/images/profileImg.jpg" alt="Profile Image" />
-    </div>
-    <div class="about-content">
-      <div class="about-profile">
-        <div class="profile-section">
-          <div class="personal-info animate__animated animate__backInUp">
-            <div class="about-title">About Me</div>
-            <br />
-            <ul class="about-list">
-              <li class="about-contents">주순태 | JOO SOON TAE</li>
-              <li class="about-contents">1992.09.25</li>
-              <li class="about-contents">
-                항상 고민하고 방법을 찾는 개발자가 되겠습니다!
-              </li>
-            </ul>
-          </div>
-          <div class="education-info animate__animated animate__backInUp">
-            <div class="about-title">Education</div>
-            <br />
-            <ul class="about-list">
-              <li class="about-contents">
-                2024.10 | 하이미디어아카데미 클라우드 기반의 자바 풀스택 수료
-              </li>
-              <li class="about-contents">
-                2024.02 | 숭실사이버대학교 건설시스템공학과 졸업
-              </li>
-              <li class="about-contents">2011.02 | 서울 대원고등학교 졸업</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="profile-section animate__animated animate__backInUp">
-          <div class="characters">
-            <div class="about-title">Characters</div>
-            <br />
-            <!-- TagCanvas 적용할 위치 -->
-            <div class="canvas-container">
-              <canvas id="myCanvas"></canvas>
-              <div id="tags">
-                <ul>
-                  <li class="canvas-contents"><a href="#">논리적인</a></li>
-                  <li class="canvas-contents"><a href="#">문제해결능력</a></li>
-                  <li class="canvas-contents"><a href="#">팀워크</a></li>
-                  <li class="canvas-contents"><a href="#">분석적인</a></li>
-                  <li class="canvas-contents"><a href="#">효율적인</a></li>
-                  <li class="canvas-contents"><a href="#">책임감</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="contributions animate__animated animate__backInUp">
-            <div class="about-title">Contributions</div>
-            <img
-              class="github-stats"
-              :src="`https://github-readme-stats.vercel.app/api?username=${githubId}&theme=dark&show_icons=true`"
-              alt="GitHub Stats"
-            />
-          </div>
-        </div>
-      </div>
-      <!-- GitHub 잔디 그래프 추가 -->
-      <div class="github-contributions animate__animated animate__backInUp">
-        <div class="contributions-container">
-          <img
-            :src="`https://ghchart.rshah.org/383D40/${githubId}?${Date.now()}`"
-            alt="GitHub Contributions Graph"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup>
-import { onMounted, nextTick } from "vue";
-import "@/assets/js/tagcanvas.js";
 
-const githubId = "Stjoo0925";
-
-let timeoutId = null;
-
-onMounted(async () => {
-  await nextTick();
-
-  const rootStyles = getComputedStyle(document.documentElement);
-  const fontColor = rootStyles.getPropertyValue("--font-color2").trim();
-
-  try {
-    TagCanvas.Start("myCanvas", "tags", {
-      textColour: fontColor,
-      outlineColour: null,
-      reverse: true,
-      depth: 0.8,
-      maxSpeed: 0.05,
-      textHeight: 18,
-      textFont: "goorm-sans-bold",
-      wheelZoom: false,
-      initial: [0.1, -0.1],
-    });
-
-    const canvas = document.getElementById("myCanvas");
-
-    canvas.addEventListener("mouseenter", () => {
-      TagCanvas.SetSpeed("myCanvas", [0, 0]);
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-    });
-
-    canvas.addEventListener("mouseleave", () => {
-      timeoutId = setTimeout(() => {
-        TagCanvas.SetSpeed("myCanvas", [0.1, -0.1]);
-      }, 1000);
-    });
-  } catch (e) {
-    console.log("TagCanvas error: ", e);
-  }
-});
 </script>
 
-<style scoped>
-a {
-  text-decoration: none;
-  color: var(--alert-color);
-}
+<template>
+    <div class="about-container about-container-scrollable">
+        <div class="title-container">
+            <div class="title">자기소개서</div>
+            <hr class="title-line" />
+        </div>
 
+        <div class="script-container">
+            <p>
+                저는 효율적이고 체계적인 개발을 목표로 하는 개발자 주순태입니다. <br><br>
+
+                다양한 프로젝트 경험을 통해 백엔드와 프론트엔드 개발 모두에 대한 깊은 이해를 쌓았으며,<br>
+                팀 내에서 기획부터 배포까지 전체 프로젝트 라이프사이클을 경험하며 문제 해결 능력을 길러왔습니다.<br>
+                최근 진행한 프로젝트에서는 5명의 팀과 함께 기획, 설계, 개발 및 배포까지의 전 과정을 담당했습니다.<br><br>
+
+                저는 주로 프로젝트 설계와 CI/CD 파이프라인 구축을 담당하며, Jenkins와 Docker를 활용한 자동화 배포 시스템을 성공적으로 구축했습니다.<br> 
+                이 과정을 통해 서버와 애플리케이션 간의 통신과 데이터 흐름을 이해하는 능력을 배양했으며,<br>
+                이를 통해 효율적인 배포 환경을 마련하는 데 기여했습니다.<br><br>
+
+                또한 NGINX를 이용한 DNS 설정 및 SSL 인증서 설치 경험은 저의 기술적 역량을 더욱 강화해 주었습니다.<br> 
+                이전 프로젝트에서 겪었던 보안 인증 문제를 해결하며, 보안성 높은 배포 환경을 성공적으로 구축할 수 있었습니다.<br> 
+                이 경험은 서버 보안의 중요성을 깊이 인식하게 되었으며, 향후 프로젝트에서 더욱 신뢰할 수 있는 시스템을 구축하는 데 필요한 기반이 되었습니다.<br><br>
+
+                프론트엔드 개발에 있어서도 저는 Vue.js와 Pinia를 활용하여 상태 관리를 효율적으로 구현하고, 사용자 친화적인 페이지 디자인을 맡았습니다.<br> 
+                특히 API 통신을 통한 데이터 처리 경험을 통해 백엔드와 프론트엔드를 유기적으로 연결하는 방법을 학습하며,<br> 
+                클라이언트와 서버 간의 데이터 흐름을 최적화할 수 있었습니다.<br><br>
+
+                이 모든 경험은 제가 문제를 분석하고, 해결책을 찾아내며, 최적의 방법으로 구현해 내는 개발자로 성장하게 해 주었습니다.<br><br>
+
+                백엔드와 프론트엔드 모두에서 유연하고 신속한 대응 능력을 갖추었으며, 각 시스템의 특성에 맞는 솔루션을 제시할 수 있는 역량을 키웠습니다.<br>
+                앞으로도 저는 꾸준한 학습과 다양한 기술을 활용하여 더욱 발전하는 개발자가 되겠습니다.<br><br>
+
+                특히 프로젝트 설계, API 개발, CI/CD 구축 등의 강점을 기반으로 더욱 완성도 높은 시스템을 설계하고, 팀의 성공에 기여하는 개발자가 되기 위해 노력할 것입니다.
+            </p>
+        </div>
+    </div>
+</template>
+
+<style scoped>
+p {
+    margin-bottom: 0 !important;
+}
 .about-container {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 50px;
@@ -149,205 +66,53 @@ a {
   display: none; /* Chrome, Safari에서 스크롤바 숨기기 */
 }
 
-.about-img {
-  flex: 4;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
+.title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.about-img img {
-  width: 80%;
-  height: 80%;
-  object-fit: contain;
+.title {
+    font-family: "goorm-sans-bold";
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: var(--font-color2);
+    text-shadow: 
+        1px 1px 0 black, 
+        -1px 1px 0 black, 
+        1px -1px 0 black, 
+        -1px -1px 0 black;
 }
 
-.intro-text {
-  margin-top: 10px;
-  font-size: 16px;
-  text-align: center;
-  font-family: "goorm-sans-bold";
-  color: var(--font-color2);
-  margin-bottom: 30px;
+.title-line {
+    width: 100px;
+    height: 2px;
+    background-color: black;
+    border: none;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  
 }
 
-.about-content {
-  flex: 6;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.script-container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--secondary-bg-color);
+    border: 3px solid var(--secondary-highlight-color);
+    border-radius: 10px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 
-.about-profile {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.profile-section {
-  display: flex;
-  justify-content: space-between;
-}
-
-.personal-info,
-.education-info,
-.characters,
-.contributions {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
-  margin: 10px;
-  box-sizing: border-box;
-  background-color: var(--secondary-bg-color);
-  border-radius: 8px;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
-  border: 3px solid;
-  border-color: var(--secondary-highlight-color);
-}
-
-.canvas-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.canvas-contents {
-  display: none;
-}
-
-.github-contributions {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.contributions-container {
-  flex: 1;
-  width: 100%;
-  height: 160px;
-  background-color: var(--contribution-bg-color);
-  border-radius: 8px;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  margin: 10px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid;
-  border-color: var(--secondary-highlight-color);
-}
-
-.github-contributions img {
-  max-width: 80%; /* 부모 요소의 크기에 맞춰 조정 */
-  height: auto; /* 비율을 유지하면서 높이를 자동 조정 */
-}
-
-h3 {
-  margin-bottom: 10px;
-  font-size: 1.2em;
-}
-
-.about-title {
-  font-family: "goorm-sans-bold";
-  font-size: 24px;
-  margin-bottom: 5px;
-  color: var(--font-color);
-}
-
-.about-list {
-  list-style-type: disc;
-  padding-left: 20px;
-  width: 100%;
-  height: 100%;
-}
-
-.about-contents {
-  font-family: "goorm-sans-code";
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: var(--font-color);
-}
-
-.github-stats,
-.github-contributions img {
-  width: 90%; /* 원하는 크기로 설정 */
-  height: auto; /* 비율을 유지하면서 높이를 자동 조정 */
-}
-
-/* 작은 화면을 위한 미디어 쿼리 */
-@media (max-width: 768px) {
-  .about-container {
-    display: block;
-    overflow-y: auto; /* 세로 스크롤 활성화 */
-  }
-
-  .about-img,
-  .about-profile {
-    width: 100%; /* 가로 폭을 100%로 설정 */
-    height: auto;
-  }
-
-  .about-img img {
-    width: 100%; /* 이미지를 화면에 맞게 조정 */
-    height: auto;
-  }
-
-  .about-content {
-    display: block;
-    height: auto;
-  }
-
-  .profile-section {
-    display: block; /* 가로 배열을 세로로 변경 */
-    width: 100%; /* 전체 폭을 차지 */
-  }
-
-  .personal-info,
-  .education-info,
-  .characters,
-  .contributions,
-  .contributions-container {
-    width: 100%; /* 각각 100% 폭을 가짐 */
-    margin: 0 0 30px 0;
-    padding: 15px; /* 내부 패딩 축소 */
-  }
-
-  .intro-text {
-    font-size: 12px; /* 글자 크기 축소 */
-    margin-top: 5px;
-  }
-
-  .github-stats,
-  .github-contributions img {
-    width: 100%; /* 모바일에서 100%로 맞춤 */
-  }
-}
-
-/* 더 작은 화면 처리 (모바일) */
-@media (max-width: 480px) {
-  .about-title {
-    font-size: 16px; /* 제목 크기 축소 */
-  }
-
-  .about-contents {
-    font-size: 12px; /* 내용 글자 크기 축소 */
-  }
+.script-container p {
+    font-family: "goorm-sans-bold";
+    font-size: 1rem;
+    color: var(--font-color2);
 }
 </style>
