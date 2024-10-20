@@ -1,19 +1,18 @@
 :root {
-  --alert-color: #060126; /* 부드러운 레드, 경고 색상 */
-  --primary-highlight-color: #383D40; /* 전기 블루, 주요 강조 색상 */
+  --alert-color: #444444; /* 어두운 경고 색상 */
+  --primary-highlight-color: #FFB2B2; /* 메인 강조 색상 */
+  --secondary-highlight-color: #444444; /* 보조 강조 색상 */
 
-  --main-bg-color: #F2D6A2; /* 짙은 차콜 블랙, 메인 배경 */
-  --portfolio-bg-color: #f5e1bc;
+  --main-bg-color: #848484; /* 메인 배경 색상 */
+  --portfolio-bg-color: #848484; /* 포트폴리오 배경 색상 */
 
-  --secondary-bg-color: #734D2D; /* 중간 톤의 그레이 블랙, 보조 배경 */
-  --contribution-bg-color: #734D2D; /* 어두운 그레이, 컨트리뷰션 배경 */
+  --secondary-bg-color: #3d3d3d; /* 보조 배경 색상 */
+  --contribution-bg-color: #444444; /* 기여도 배경 색상 */
 
-  --secondary-highlight-color: #383D40; /* 차분한 중간 그레이, 보조 강조 색상 */
-
-  --header-footer-color: #0D0D0D; /* 깊고 짙은 블랙, 헤더와 푸터 색상 */
+  --header-footer-color: #050505; /* 헤더와 푸터 색상 */
 
   /* 폰트컬러 */
-  --font-color: #ffffff; /* 흰색 폰트, 명료한 텍스트 강조 */
-  --font-color2: #f2f2f2; /* 밝은 그레이 폰트, 보조 텍스트 강조 */
-  --font-color3: #000000; /* 밝은 그레이 폰트, 보조 텍스트 강조 */
+  --font-color: #e0e0e0; /* 기본 폰트 색상 */
+  --font-color2: #cccccc; /* 보조 폰트 색상 */
+  --font-color3: #ffffff; /* 강조된 폰트 색상 */
 }

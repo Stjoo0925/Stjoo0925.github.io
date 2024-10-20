@@ -21,6 +21,7 @@
 <script setup>
 import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import Intro from "@/views/intro.vue";
 import About from "@/views/about.vue";
 import TechSkills from "@/views/techSkills.vue";
 import Portfolio from "@/views/portfolio.vue";
@@ -36,7 +37,8 @@ const router = useRouter();
 
 // 라우트 설정
 const routes = [
-  { path: "/", component: About },
+  { path: "/", component: Intro },
+  { path: "/about", component: About },
   { path: "/tech-skills", component: TechSkills },
   { path: "/portfolio", component: Portfolio },
   { path: "/contact", component: Contact },
