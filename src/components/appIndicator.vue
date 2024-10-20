@@ -22,7 +22,6 @@
 import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import Intro from "@/views/intro.vue";
-import About from "@/views/about.vue";
 import TechSkills from "@/views/techSkills.vue";
 import Portfolio from "@/views/portfolio.vue";
 import Contact from "@/views/contact.vue";
@@ -38,7 +37,6 @@ const router = useRouter();
 // 라우트 설정
 const routes = [
   { path: "/", component: Intro },
-  { path: "/about", component: About },
   { path: "/tech-skills", component: TechSkills },
   { path: "/portfolio", component: Portfolio },
   { path: "/contact", component: Contact },
@@ -128,7 +126,6 @@ const hasNext = computed(() => currentIndex.value < routes.length - 1);
 .nav-button:disabled img {
   filter: invert(0);
 }
-
 
 .nav-button:not(:disabled):hover {
   background-color: var(--secondary-highlight-color);
