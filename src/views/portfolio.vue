@@ -15,25 +15,6 @@ const navigateTo = (path) => {
     </div>
     <div class="portfolio-grid animate__animated animate__fadeInUp">
       <!-- 첫 번째 프로젝트 카드 -->
-      <div class="portfolio-card" @click="navigateTo('/portfolio/kiosk')">
-        <!-- 기술 뱃지를 카드 내용의 위로 이동 -->
-        <div class="portfolio-badges">
-          <span class="badge">Vue.js</span>
-          <span class="badge">Pinia</span>
-          <span class="badge">Axios</span>
-          <span class="badge">Json-server</span>
-        </div>
-        <img
-          src="@/assets/images/background/vue-project.png"
-          alt="Vue.js Project"
-          class="portfolio-image"
-        />
-        <div class="portfolio-info">
-          <h5>Vue.js Project</h5>
-          <p>Vue.js를 이용한 햄버거 키오스크 프로젝트</p>
-        </div>
-      </div>
-      <!-- 두 번째 프로젝트 카드 -->
       <div class="portfolio-card" @click="navigateTo('/portfolio/flux')">
         <!-- 기술 뱃지를 추가하고 카드 내용의 위로 이동 -->
         <div class="portfolio-badges">
@@ -54,7 +35,7 @@ const navigateTo = (path) => {
           </p>
         </div>
       </div>
-      <!-- 세 번째 프로젝트 카드 -->
+      <!-- 두 번째 프로젝트 카드 -->
       <div class="portfolio-card" @click="navigateTo('/portfolio/leafresh')">
         <!-- 기술 뱃지를 추가하고 카드 내용의 위로 이동 -->
         <div class="portfolio-badges">
@@ -74,6 +55,25 @@ const navigateTo = (path) => {
             스프링프레임워크와 뷰프레임워크를 이용한 SNS 스타일의 원예일지
             플랫폼 프로젝트
           </p>
+        </div>
+      </div>
+      <!-- 세 번째 프로젝트 카드 -->
+      <div class="portfolio-card" @click="navigateTo('/portfolio/Afterburner')">
+        <!-- 기술 뱃지를 카드 내용의 위로 이동 -->
+        <div class="portfolio-badges">
+          <span class="badge">React</span>
+          <span class="badge">Tailwindcss</span>
+          <span class="badge">Redux</span>
+          <span class="badge">Supabase</span>
+        </div>
+        <img
+          src="@/assets/images/background/Afterburner-project.png"
+          alt="Vue.js Project"
+          class="portfolio-image"
+        />
+        <div class="portfolio-info">
+          <h5>Afterburner</h5>
+          <p>React와 Supabase를 이용한 프로젝트 설명사이트</p>
         </div>
       </div>
     </div>
@@ -113,10 +113,7 @@ const navigateTo = (path) => {
   font-family: "goorm-sans-bold";
   font-size: 2rem;
   color: var(--font-color2);
-  text-shadow: 
-    1px 1px 0 black, 
-    -1px 1px 0 black, 
-    1px -1px 0 black, 
+  text-shadow: 1px 1px 0 black, -1px 1px 0 black, 1px -1px 0 black,
     -1px -1px 0 black;
 }
 
@@ -132,10 +129,7 @@ const navigateTo = (path) => {
   font-family: "goorm-sans-bold";
   font-size: 1rem;
   color: var(--font-color2);
-  text-shadow: 
-    1px 1px 0 black, 
-    -1px 1px 0 black, 
-    1px -1px 0 black, 
+  text-shadow: 1px 1px 0 black, -1px 1px 0 black, 1px -1px 0 black,
     -1px -1px 0 black;
 }
 

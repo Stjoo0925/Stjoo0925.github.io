@@ -1,31 +1,44 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
 const About = () => import(/* webpackPrefetch: true */ "@/views/about.vue");
-const TechSkills = () => import(/* webpackPrefetch: true */ "@/views/techSkills.vue");
-const Portfolio = () => import(/* webpackPrefetch: true */ "@/views/portfolio.vue");
+const TechSkills = () =>
+  import(/* webpackPrefetch: true */ "@/views/techSkills.vue");
+const Portfolio = () =>
+  import(/* webpackPrefetch: true */ "@/views/portfolio.vue");
 const Contact = () => import(/* webpackPrefetch: true */ "@/views/contact.vue");
-const Kiosk = () => import(/* webpackPrefetch: true */ "@/views/portfolio-kiosk.vue");
-const Flux = () => import(/* webpackPrefetch: true */ "@/views/portfolio-flux.vue");
-const Leafresh = () => import(/* webpackPrefetch: true */ "@/views/portfolio-leafresh.vue");
+const Afterburner = () =>
+  import(/* webpackPrefetch: true */ "@/views/portfolio-Afterburner.vue");
+const Flux = () =>
+  import(/* webpackPrefetch: true */ "@/views/portfolio-flux.vue");
+const Leafresh = () =>
+  import(/* webpackPrefetch: true */ "@/views/portfolio-leafresh.vue");
 
 const routes = [
   { path: "/", component: About, meta: { transition: "fade" } },
   { path: "/tech-skills", component: TechSkills, meta: { transition: "fade" } },
   { path: "/portfolio", component: Portfolio, meta: { transition: "fade" } },
-  { path: "/portfolio/kiosk", component: Kiosk, meta: { transition: "fade" } },
+  {
+    path: "/portfolio/Afterburner",
+    component: Afterburner,
+    meta: { transition: "fade" },
+  },
   { path: "/portfolio/flux", component: Flux, meta: { transition: "fade" } },
-  { path: "/portfolio/leafresh", component: Leafresh, meta: { transition: "fade" } },
+  {
+    path: "/portfolio/leafresh",
+    component: Leafresh,
+    meta: { transition: "fade" },
+  },
   { path: "/contact", component: Contact, meta: { transition: "fade" } },
 ];
 
 const routeOrder = [
-  "/", 
-  "/tech-skills", 
-  "/portfolio", 
-  "/portfolio/kiosk", 
-  "/portfolio/flux", 
-  "/portfolio/leafresh", 
-  "/contact"
+  "/",
+  "/tech-skills",
+  "/portfolio",
+  "/portfolio/Afterburner",
+  "/portfolio/flux",
+  "/portfolio/leafresh",
+  "/contact",
 ];
 
 const router = createRouter({

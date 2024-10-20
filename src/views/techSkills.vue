@@ -9,6 +9,7 @@ import HTML from "@/assets/images/HTML.svg";
 import CSS from "@/assets/images/CSS.svg";
 import JavaScript from "@/assets/images/JavaScript.svg";
 import Vue from "@/assets/images/VueJS-Light.svg";
+import React from "@/assets/images/React.svg";
 import Git from "@/assets/images/Git.svg";
 import Github from "@/assets/images/Github-Light.svg";
 import Docker from "@/assets/images/Docker.svg";
@@ -55,6 +56,11 @@ const frontend = reactive([
   {
     name: "Vue.js",
     logo: Vue,
+    description: "Front-end Framework",
+  },
+  {
+    name: "React",
+    logo: React,
     description: "Front-end Framework",
   },
 ]);
@@ -109,7 +115,7 @@ const cicd = reactive([
 
     <div class="frontend-container">
       <div class="scription2">FrontEnd Part</div>
-      <div class="tech-card-container">
+      <div class="tech-card-container2">
         <div
           v-for="(tech, index) in frontend"
           :key="tech.name"
@@ -180,10 +186,7 @@ p {
   font-size: 1.8rem;
   margin-bottom: 5px;
   color: var(--font-color2);
-  text-shadow: 
-    1px 1px 0 black, 
-    -1px 1px 0 black, 
-    1px -1px 0 black, 
+  text-shadow: 1px 1px 0 black, -1px 1px 0 black, 1px -1px 0 black,
     -1px -1px 0 black;
 }
 
@@ -194,7 +197,6 @@ p {
   border: none;
   margin: 0 auto;
   margin-bottom: 10px;
-  
 }
 
 .scription {
@@ -202,10 +204,7 @@ p {
   font-size: 0.8rem;
   margin-bottom: 5px;
   color: var(--font-color2);
-  text-shadow: 
-    1px 1px 0 black, 
-    -1px 1px 0 black, 
-    1px -1px 0 black, 
+  text-shadow: 1px 1px 0 black, -1px 1px 0 black, 1px -1px 0 black,
     -1px -1px 0 black;
 }
 
@@ -214,10 +213,7 @@ p {
   font-size: 1rem;
   margin-bottom: 10px;
   color: var(--font-color2);
-  text-shadow: 
-    1px 1px 0 black, 
-    -1px 1px 0 black, 
-    1px -1px 0 black, 
+  text-shadow: 1px 1px 0 black, -1px 1px 0 black, 1px -1px 0 black,
     -1px -1px 0 black;
 }
 
@@ -234,6 +230,13 @@ p {
 .tech-card-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.tech-card-container2 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   justify-items: center;
 }

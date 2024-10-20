@@ -41,35 +41,63 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div ref="containerRef" class="kiosk-project-container kiosk-project-container-scrollable">
+  <div
+    ref="containerRef"
+    class="kiosk-project-container kiosk-project-container-scrollable"
+  >
     <!-- 제목 영역 -->
     <div class="title-container">
-      <h1 class="project-title">키오스크 프로젝트</h1>
+      <h1 class="project-title">Afterburner 프로젝트</h1>
       <hr class="title-line" />
-      <p class="project-subtitle">Vue.js를 활용한 햄버거 키오스크</p>
+      <p class="project-subtitle">
+        React와 Supabase를 이용한 프로젝트 설명사이트
+      </p>
     </div>
 
     <!-- 뱃지 영역 -->
     <div class="badge-container">
       <!-- 첫 번째 뱃지 -->
-      <img src="https://img.shields.io/badge/Vue.js-v3.4.21-4FC08D?style=flat&logo=vue.js&logoColor=white" alt="Vue.js Badge" />
+      <img
+        src="https://img.shields.io/badge/React-v18.3.1-61DAFB?logo=react&logoColor=white"
+        alt="React Badge"
+      />
+      <img
+        src="https://img.shields.io/badge/Redux-v9.1.2-764ABC?logo=redux&logoColor=white"
+        alt="Redux Badge"
+      />
+      <img
+        src="https://img.shields.io/badge/ESLint-v9.12.0-4B32C3?logo=eslint&logoColor=white"
+        alt="ESLint Badge"
+      />
+      <img
+        src="https://img.shields.io/badge/TailwindCSS-v3.4.13-38B2AC?logo=tailwindcss&logoColor=white"
+        alt="TailwindCSS Badge"
+      />
     </div>
 
     <!-- 아이콘 링크 영역 -->
     <div class="project-links">
       <a
-        href="https://github.com/Stjoo0925/Vue-project"
+        href="https://github.com/Afterburner2024/Afterburner-Front"
         target="_blank"
         aria-label="GitHub"
       >
-        <img src="@/assets/images/project-github.svg" alt="Github Logo" class="logo" />
+        <img
+          src="@/assets/images/project-github.svg"
+          alt="Github Logo"
+          class="logo"
+        />
       </a>
       <a
         href="https://burgerkiosk.vercel.app/"
         target="_blank"
         aria-label="Vercel"
       >
-        <img src="@/assets/images/deployed-vercel.svg" alt="Vercel Logo" class="logo" />
+        <img
+          src="@/assets/images/deployed-netlify.svg"
+          alt="Vercel Logo"
+          class="logo"
+        />
       </a>
     </div>
 
@@ -77,10 +105,15 @@ onUnmounted(() => {
     <section class="project-overview">
       <h2 class="section-title">프로젝트 소개</h2>
       <p class="section-description">
-        이 프로젝트는 Vue.js를 기반으로 제작된 햄버거 키오스크 시스템입니다.<br />
-        사용자들이 키오스크를 통해 메뉴를 선택하고 주문을 진행할 수 있도록
-        구성되었으며, 사용자 친화적인 UI와 다양한 기능을 제공합니다.<br /><br />
-        목표기간 : 24.05.23 - 06.12
+        우리 웹 페이지는 사용자 친화적인 UI와 관리 편의성을 중점으로
+        개발되었습니다.<br />
+        프론트엔드에서는 React를 기반으로 하여 빠른 렌더링과 컴포넌트 재사용성을
+        극대화하였으며,<br />
+        TailwindCss를 통해 반응형 웹디자인을 구현하였으며,<br />
+        Redux를 통해 전역 상태 관리를 효율적으로 처리하고 있습니다.<br />
+        또한, Supabase를 활용해 실시간 데이터 동기화와 통신을 원활하게 처리하여
+        데이터의 즉각적인 반영이 가능하도록 설계하였습니다.<br />
+        목표기간 : 24.10.14 - 10.20
       </p>
     </section>
 
@@ -88,16 +121,12 @@ onUnmounted(() => {
     <section class="project-tech-stack">
       <h2 class="section-title">기여 내역</h2>
       <ul class="tech-stack-list">
-        <li>페이지 디자인 및 상태관리 & Api통신 파트 담당</li>
-        <li>24.05.28 : Footer 레이아웃 완성</li>
-        <li>24.05.29 : 메인메뉴 레이아웃 완성</li>
-        <li>24.05.30 : 리드미 이미지 추가</li>
-        <li>24.05.31 : json data 추가</li>
-        <li>24.06.05 : Vue 메인메뉴 파트 변환 및 기능 완성</li>
-        <li>24.06.06 : 메인메뉴 기능 추가 및 CSS 작업</li>
-        <li>24.06.07 : 메인메뉴 기능 완성</li>
-        <li>24.06.09 : 디렉토리 정리 및 코드 정리</li>
-        <li>24.09.22 : 배포버전을 위한 로컬데이터로 변환</li>
+        <li>웹페이지 전체 디자인 및 코드설계 Supabase연결 및 배포</li>
+        <li>소개 페이지</li>
+        <li>기능 페이지</li>
+        <li>리뷰 페이지</li>
+        <li>서포트 페이지</li>
+        <li>팀소개 페이지</li>
       </ul>
     </section>
 
@@ -105,10 +134,8 @@ onUnmounted(() => {
     <section class="project-features">
       <h2 class="section-title">주요 기능</h2>
       <ul class="feature-list">
-        <li>메뉴 선택 및 주문 기능</li>
-        <li>실시간 주문 내역 확인 및 수정</li>
-        <li>다양한 세트 메뉴 구성 옵션</li>
-        <li>장바구니 기능을 통한 주문 편의성 제공</li>
+        <li>메일보내기</li>
+        <li>프로젝트 및 팀원 링크</li>
       </ul>
     </section>
 
@@ -116,9 +143,10 @@ onUnmounted(() => {
     <section class="project-tech-stack">
       <h2 class="section-title">사용 기술</h2>
       <ul class="tech-stack-list">
-        <li>Vue.js - 프론트엔드 프레임워크</li>
-        <li>Pinia - 상태 관리</li>
-        <li>Axios - API 통신</li>
+        <li>React - 프론트엔드 프레임워크</li>
+        <li>Redux - 상태 관리</li>
+        <li>TailwindCSS - css 프레임워크</li>
+        <li>Supabase - 데이터베이스</li>
       </ul>
     </section>
 
@@ -128,24 +156,24 @@ onUnmounted(() => {
       <div class="image-gallery">
         <div class="image-item">
           <img
-            src="@/assets/images/vue-project/kiosk-main.png"
+            src="@/assets/images/afterburner-project/afterburner-main.png"
             alt="키오스크 메인 화면"
           />
           <p>메인 화면</p>
         </div>
         <div class="image-item">
           <img
-            src="@/assets/images/vue-project/kiosk-order.png"
+            src="@/assets/images/afterburner-project/afterburner-function.png"
             alt="키오스크 주문 화면"
           />
-          <p>주문 화면</p>
+          <p>기능 소개 화면</p>
         </div>
         <div class="image-item">
           <img
-            src="@/assets/images/vue-project/kiosk-payment.png"
+            src="@/assets/images/afterburner-project/afterburner-team.png"
             alt="키오스크 결제 화면"
           />
-          <p>결제 화면</p>
+          <p>팀 소개 화면</p>
         </div>
       </div>
     </section>
@@ -198,7 +226,7 @@ onUnmounted(() => {
 }
 
 .title-line {
-  width: 300px;
+  width: 400px;
   height: 2px;
   background-color: var(--font-color3);
   border: none;
@@ -344,8 +372,13 @@ onUnmounted(() => {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .scroll-top-button {
